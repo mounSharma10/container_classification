@@ -1,29 +1,30 @@
 <div class="container-fluid p-4">
-    <div class="d-flex justify-content-between align-items-center">
-  <h1 class="dashboard-title">ABC.pdf</h1>
-  <button routerLink="/dashboard" class="btn btn-outline-primary btn-sm px-3 py-2"><i class="fa-solid fa-chevron-left"></i>Back</button>
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="dashboard-title">Review Container</h1>
+    <button routerLink="/upload" class="btn btn-outline-primary btn-sm px-3 py-2"><i
+        class="fa-solid fa-chevron-left"></i>Back</button>
   </div>
   <div class="accordion" id="containerAccordion">
 
     <!-- CONTAINER ONE -->
     <div class="accordion-item">
       <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#containerOne" aria-expanded="false"
-              aria-controls="containerOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#containerOne" aria-expanded="false" aria-controls="containerOne">
           Container 1
         </button>
       </h2>
 
-      <div id="containerOne" class="accordion-collapse collapse" data-bs-parent="#containerOne">
+      <div id="containerOne" class="accordion-collapse " data-bs-parent="#containerOne">
         <div class="accordion-body">
-        <div class="row g-3">
+          <div class="row g-3">
 
             <!-- File Card -->
             <div class="col-md-6 col-lg-6">
               <div class="file-card">
                 <div class="file-left">
-                <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
+                  <div class="file-icon pdf">
+                    <i class="fa-solid fa-file-pdf"></i>
                   </div>
                   <div class="file-info">
                     <h6 class="file-name">BOL.PDF</h6>
@@ -31,56 +32,12 @@
                   </div>
                 </div>
                 <div class="file-actions">
-                  <button class="icon-btn view"  (click)="openFileModal()">
-                    <i class="fas fa-eye"></i>
-                  </button>
-                  <button class="icon-btn delete">
-                    <i class="fa-solid fa-circle-info"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-6">
-              <div class="file-card">
-                <div class="file-left">
-               <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
-                  </div>
-                  <div class="file-info">
-                    <h6 class="file-name">INVOICE.PDF</h6>
-                    <small class="file-meta">DOC • 1.1 MB</small>
-                  </div>
-                </div>
-                <div class="file-actions">
                   <button class="icon-btn view" (click)="openFileModal()">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="icon-btn delete "  (click)="openFileModal()">
+                  <!-- <button class="icon-btn delete">
                     <i class="fa-solid fa-circle-info"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-6">
-              <div class="file-card">
-                <div class="file-left">
-                <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
-                  </div>
-                  <div class="file-info">
-                    <h6 class="file-name">PY.PDF</h6>
-                    <small class="file-meta">XLS • 800 KB</small>
-                  </div>
-                </div>
-                <div class="file-actions">
-                  <button class="icon-btn view"  (click)="openFileModal()">
-                    <i class="fas fa-eye"></i>
-                  </button>
-                  <button class="icon-btn delete">
-                    <i class="fa-solid fa-circle-info"></i>
-                  </button>
+                  </button> -->
                 </div>
               </div>
             </div>
@@ -89,7 +46,51 @@
               <div class="file-card">
                 <div class="file-left">
                   <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
+                    <i class="fa-solid fa-file-pdf"></i>
+                  </div>
+                  <div class="file-info">
+                    <h6 class="file-name">INVOICE.PDF</h6>
+                    <small class="file-meta">DOC • 1.1 MB</small>
+                  </div>
+                </div>
+                <div class="file-actions">
+                  <button class="icon-btn view" (click)="openFileModal()" routerLink="/documentPanel">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <!-- <button class="icon-btn delete " (click)="openFileModal()">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </button> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6">
+              <div class="file-card">
+                <div class="file-left">
+                  <div class="file-icon pdf">
+                    <i class="fa-solid fa-file-pdf"></i>
+                  </div>
+                  <div class="file-info">
+                    <h6 class="file-name">PACKING LIST.PDF</h6>
+                    <small class="file-meta">PDF • 800 KB</small>
+                  </div>
+                </div>
+                <div class="file-actions">
+                  <button class="icon-btn view" (click)="openFileModal()">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <!-- <button class="icon-btn delete">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </button> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6">
+              <div class="file-card">
+                <div class="file-left">
+                  <div class="file-icon pdf">
+                    <i class="fa-solid fa-file-pdf"></i>
                   </div>
                   <div class="file-info">
                     <h6 class="file-name">OTHER.PDF</h6>
@@ -100,9 +101,9 @@
                   <button class="icon-btn view" (click)="openFileModal()">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="icon-btn delete" >
+                  <!-- <button class="icon-btn delete">
                     <i class="fa-solid fa-circle-info"></i>
-                  </button>
+                  </button> -->
                 </div>
               </div>
             </div>
@@ -114,12 +115,13 @@
 
     <div class="accordion-item">
       <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#containerTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#containerTwo">
           Container 2
         </button>
       </h2>
 
-      <div id="containerTwo" class="accordion-collapse collapse">
+      <div id="containerTwo" class="accordion-collapse ">
         <div class="accordion-body">
           <div class="row g-3">
 
@@ -127,8 +129,8 @@
             <div class="col-md-6 col-lg-6">
               <div class="file-card">
                 <div class="file-left">
-                <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
+                  <div class="file-icon pdf">
+                    <i class="fa-solid fa-file-pdf"></i>
                   </div>
                   <div class="file-info">
                     <h6 class="file-name">BOL.PDF</h6>
@@ -136,12 +138,12 @@
                   </div>
                 </div>
                 <div class="file-actions">
-                  <button class="icon-btn view"  (click)="openFileModal()">
+                  <button class="icon-btn view" (click)="openFileModal()">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="icon-btn delete">
+                  <!-- <button class="icon-btn delete">
                     <i class="fa-solid fa-circle-info"></i>
-                  </button>
+                  </button> -->
                 </div>
               </div>
             </div>
@@ -149,8 +151,8 @@
             <div class="col-md-6 col-lg-6">
               <div class="file-card">
                 <div class="file-left">
-               <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
+                  <div class="file-icon pdf">
+                    <i class="fa-solid fa-file-pdf"></i>
                   </div>
                   <div class="file-info">
                     <h6 class="file-name">INVOICE.PDF</h6>
@@ -161,31 +163,9 @@
                   <button class="icon-btn view" (click)="openFileModal()">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="icon-btn delete "  (click)="openFileModal()">
+                  <!-- <button class="icon-btn delete " (click)="openFileModal()">
                     <i class="fa-solid fa-circle-info"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-6">
-              <div class="file-card">
-                <div class="file-left">
-                <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
-                  </div>
-                  <div class="file-info">
-                    <h6 class="file-name">PY.PDF</h6>
-                    <small class="file-meta">XLS • 800 KB</small>
-                  </div>
-                </div>
-                <div class="file-actions">
-                  <button class="icon-btn view"  (click)="openFileModal()">
-                    <i class="fas fa-eye"></i>
-                  </button>
-                  <button class="icon-btn delete">
-                    <i class="fa-solid fa-circle-info"></i>
-                  </button>
+                  </button> -->
                 </div>
               </div>
             </div>
@@ -194,7 +174,29 @@
               <div class="file-card">
                 <div class="file-left">
                   <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
+                    <i class="fa-solid fa-file-pdf"></i>
+                  </div>
+                  <div class="file-info">
+                    <h6 class="file-name">PACKING LIST.PDF</h6>
+                    <small class="file-meta">XLS • 800 KB</small>
+                  </div>
+                </div>
+                <div class="file-actions">
+                  <button class="icon-btn view" (click)="openFileModal()">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <!-- <button class="icon-btn delete">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </button> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6">
+              <div class="file-card">
+                <div class="file-left">
+                  <div class="file-icon pdf">
+                    <i class="fa-solid fa-file-pdf"></i>
                   </div>
                   <div class="file-info">
                     <h6 class="file-name">OTHER.PDF</h6>
@@ -205,9 +207,9 @@
                   <button class="icon-btn view" (click)="openFileModal()">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="icon-btn delete" >
+                  <!-- <button class="icon-btn delete">
                     <i class="fa-solid fa-circle-info"></i>
-                  </button>
+                  </button> -->
                 </div>
               </div>
             </div>
@@ -218,21 +220,22 @@
     </div>
     <div class="accordion-item">
       <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#containerThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#containerThree">
           Container 3
         </button>
       </h2>
 
-      <div id="containerThree" class="accordion-collapse collapse">
+      <div id="containerThree" class="accordion-collapse ">
         <div class="accordion-body">
-        <div class="row g-3">
+          <div class="row g-3">
 
             <!-- File Card -->
             <div class="col-md-6 col-lg-6">
               <div class="file-card">
                 <div class="file-left">
-                <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
+                  <div class="file-icon pdf">
+                    <i class="fa-solid fa-file-pdf"></i>
                   </div>
                   <div class="file-info">
                     <h6 class="file-name">BOL.PDF</h6>
@@ -240,12 +243,12 @@
                   </div>
                 </div>
                 <div class="file-actions">
-                  <button class="icon-btn view"  (click)="openFileModal()">
+                  <button class="icon-btn view" (click)="openFileModal()">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="icon-btn delete">
+                  <!-- <button class="icon-btn delete">
                     <i class="fa-solid fa-circle-info"></i>
-                  </button>
+                  </button> -->
                 </div>
               </div>
             </div>
@@ -253,8 +256,8 @@
             <div class="col-md-6 col-lg-6">
               <div class="file-card">
                 <div class="file-left">
-               <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
+                  <div class="file-icon pdf">
+                    <i class="fa-solid fa-file-pdf"></i>
                   </div>
                   <div class="file-info">
                     <h6 class="file-name">INVOICE.PDF</h6>
@@ -265,31 +268,9 @@
                   <button class="icon-btn view" (click)="openFileModal()">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="icon-btn delete "  (click)="openFileModal()">
+                  <!-- <button class="icon-btn delete " (click)="openFileModal()">
                     <i class="fa-solid fa-circle-info"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-6">
-              <div class="file-card">
-                <div class="file-left">
-                <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
-                  </div>
-                  <div class="file-info">
-                    <h6 class="file-name">PY.PDF</h6>
-                    <small class="file-meta">XLS • 800 KB</small>
-                  </div>
-                </div>
-                <div class="file-actions">
-                  <button class="icon-btn view"  (click)="openFileModal()">
-                    <i class="fas fa-eye"></i>
-                  </button>
-                  <button class="icon-btn delete">
-                    <i class="fa-solid fa-circle-info"></i>
-                  </button>
+                  </button> -->
                 </div>
               </div>
             </div>
@@ -298,7 +279,29 @@
               <div class="file-card">
                 <div class="file-left">
                   <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
+                    <i class="fa-solid fa-file-pdf"></i>
+                  </div>
+                  <div class="file-info">
+                    <h6 class="file-name">PACKING LIST.PDF</h6>
+                    <small class="file-meta">XLS • 800 KB</small>
+                  </div>
+                </div>
+                <div class="file-actions">
+                  <button class="icon-btn view" (click)="openFileModal()">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <!-- <button class="icon-btn delete">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </button> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6">
+              <div class="file-card">
+                <div class="file-left">
+                  <div class="file-icon pdf">
+                    <i class="fa-solid fa-file-pdf"></i>
                   </div>
                   <div class="file-info">
                     <h6 class="file-name">OTHER.PDF</h6>
@@ -309,9 +312,9 @@
                   <button class="icon-btn view" (click)="openFileModal()">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="icon-btn delete" >
+                  <!-- <button class="icon-btn delete">
                     <i class="fa-solid fa-circle-info"></i>
-                  </button>
+                  </button> -->
                 </div>
               </div>
             </div>
@@ -322,12 +325,13 @@
     </div>
     <div class="accordion-item">
       <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#containerFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#containerFour">
           Container 4
         </button>
       </h2>
 
-      <div id="containerFour" class="accordion-collapse collapse">
+      <div id="containerFour" class="accordion-collapse ">
         <div class="accordion-body">
           <div class="row g-3">
 
@@ -335,8 +339,8 @@
             <div class="col-md-6 col-lg-6">
               <div class="file-card">
                 <div class="file-left">
-                <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
+                  <div class="file-icon pdf">
+                    <i class="fa-solid fa-file-pdf"></i>
                   </div>
                   <div class="file-info">
                     <h6 class="file-name">BOL.PDF</h6>
@@ -344,56 +348,12 @@
                   </div>
                 </div>
                 <div class="file-actions">
-                  <button class="icon-btn view"  (click)="openFileModal()">
-                    <i class="fas fa-eye"></i>
-                  </button>
-                  <button class="icon-btn delete">
-                    <i class="fa-solid fa-circle-info"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-6">
-              <div class="file-card">
-                <div class="file-left">
-               <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
-                  </div>
-                  <div class="file-info">
-                    <h6 class="file-name">INVOICE.PDF</h6>
-                    <small class="file-meta">DOC • 1.1 MB</small>
-                  </div>
-                </div>
-                <div class="file-actions">
                   <button class="icon-btn view" (click)="openFileModal()">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="icon-btn delete "  (click)="openFileModal()">
+                  <!-- <button class="icon-btn delete">
                     <i class="fa-solid fa-circle-info"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-6">
-              <div class="file-card">
-                <div class="file-left">
-                <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
-                  </div>
-                  <div class="file-info">
-                    <h6 class="file-name">PY.PDF</h6>
-                    <small class="file-meta">XLS • 800 KB</small>
-                  </div>
-                </div>
-                <div class="file-actions">
-                  <button class="icon-btn view"  (click)="openFileModal()">
-                    <i class="fas fa-eye"></i>
-                  </button>
-                  <button class="icon-btn delete">
-                    <i class="fa-solid fa-circle-info"></i>
-                  </button>
+                  </button> -->
                 </div>
               </div>
             </div>
@@ -402,20 +362,64 @@
               <div class="file-card">
                 <div class="file-left">
                   <div class="file-icon pdf">
-                   <i class="fa-solid fa-file-pdf"></i>
+                    <i class="fa-solid fa-file-pdf"></i>
                   </div>
                   <div class="file-info">
-                    <h6 class="file-name">OTHER.PDF</h6>
-                    <small class="file-meta">PPT • 5.2 MB</small>
+                    <h6 class="file-name">INVOICE.PDF</h6>
+                    <small class="file-meta">PDF • 2.3 MB</small>
                   </div>
                 </div>
                 <div class="file-actions">
                   <button class="icon-btn view" (click)="openFileModal()">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="icon-btn delete" >
+                  <!-- <button class="icon-btn delete " (click)="openFileModal()">
                     <i class="fa-solid fa-circle-info"></i>
+                  </button> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6">
+              <div class="file-card">
+                <div class="file-left">
+                  <div class="file-icon pdf">
+                    <i class="fa-solid fa-file-pdf"></i>
+                  </div>
+                  <div class="file-info">
+                    <h6 class="file-name">PACKING LIST.PDF</h6>
+                    <small class="file-meta">PDF • 2.3 MB</small>
+                  </div>
+                </div>
+                <div class="file-actions">
+                  <button class="icon-btn view" (click)="openFileModal()">
+                    <i class="fas fa-eye"></i>
                   </button>
+                  <!-- <button class="icon-btn delete">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </button> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6">
+              <div class="file-card">
+                <div class="file-left">
+                  <div class="file-icon pdf">
+                    <i class="fa-solid fa-file-pdf"></i>
+                  </div>
+                  <div class="file-info">
+                    <h6 class="file-name">OTHER.PDF</h6>
+                    <small class="file-meta">PDF • 2.3 MB</small>
+                  </div>
+                </div>
+                <div class="file-actions">
+                  <button class="icon-btn view" (click)="openFileModal()">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <!-- <button class="icon-btn delete">
+                    <i class="fa-solid fa-circle-info"></i>
+                  </button> -->
                 </div>
               </div>
             </div>
@@ -447,9 +451,10 @@
 
           <hr>
 
-          <div class="preview-box">
-            <i class="far fa-file-pdf"></i>
-            <p>Preview not available</p>
+          <div class="preview-box preview-pdf">
+            <iframe src="../../assets/dummy-pdf_2.pdf" title="PDF Preview"
+              frameborder="0">
+            </iframe>
           </div>
         </div>
       </div>

@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component,ElementRef, ViewChild } from '@angular/core';
+import { RouterLink, RouterModule } from "@angular/router";
 
 @Component({
   selector: 'app-file-upload',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterModule],
   templateUrl: './file-upload.html',
   styleUrl: './file-upload.scss',
 })
