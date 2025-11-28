@@ -11,7 +11,8 @@
                 </button> -->
             <div class="dropdown position-relative" [class.show]="showFilter">
 
-                <button class="btn btn-outline-primary btn-sm dropdown-toggle px-3 py-2" type="button" (click)="toggleFilter()">
+                <button class="btn btn-outline-primary btn-sm dropdown-toggle px-3 py-2" type="button"
+                    (click)="toggleFilter()">
                     <i class="fas fa-filter me-1"></i> Filter
                 </button>
                 <div class="dropdown-menu p-3 filter-dropdown" [class.show]="showFilter">
@@ -20,7 +21,7 @@
                         <input type="text" class="form-control form-control-sm" [(ngModel)]="filters.name"
                             placeholder="Enter container ID ">
                     </div>
-<!-- 
+                    <!-- 
                     <div class="mb-2">
                         <label class="form-label">Document Type</label>
                         <select class="form-select form-select-sm" [(ngModel)]="filters.type">
@@ -36,9 +37,7 @@
                     </button>
                 </div>
             </div>
-            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addDocumentModal">
-  <i class="fas fa-plus me-1"></i> Add Document
-</button>
+        
 
         </div>
     </div>
@@ -60,7 +59,7 @@
                     <td><span class="status-badge status-active">Active</span></td>
                     <td>12-01-2025</td>
                     <td>
-                        <a routerLink="/documentPanel"><i class="fas fa-eye action-icon" title="View" ></i></a>
+                        <a routerLink="/dashboard/documentPanel"><i class="fas fa-eye action-icon" title="View"></i></a>
                         <!-- <i class="fas fa-edit action-icon" title="Edit"></i>
                             <i class="fa-solid fa-circle-info action-icon" title="Delete"></i> -->
                         <!-- <i class="fa-solid fa-share action-icon" title="send"></i> -->
@@ -72,7 +71,7 @@
                     <td><span class="status-badge status-pending">Pending</span></td>
                     <td>12-01-2025</td>
                     <td>
-                        <a routerLink="/documentPanel"><i class="fas fa-eye action-icon" title="View" ></i></a>
+                        <a routerLink="/dashboard/documentPanel"><i class="fas fa-eye action-icon" title="View"></i></a>
                         <!-- <i class="fas fa-edit action-icon" title="Edit"></i>
                             <i class="fa-solid fa-circle-info action-icon" title="Delete"></i> -->
                         <i class="fa-solid fa-share action-icon" title="send"></i>
@@ -84,7 +83,7 @@
                     <td><span class="status-badge status-active">Active</span></td>
                     <td>12-01-2025</td>
                     <td>
-                          <a routerLink="/documentPanel"><i class="fas fa-eye action-icon" title="View" ></i></a>
+                        <a routerLink="/dashboard/documentPanel"><i class="fas fa-eye action-icon" title="View"></i></a>
                         <!-- <i class="fas fa-edit action-icon" title="Edit"></i>
                             <i class="fa-solid fa-circle-info action-icon" title="Delete"></i> -->
                         <i class="fa-solid fa-share action-icon" title="send"></i>
@@ -96,7 +95,7 @@
                     <td><span class="status-badge status-archived">Archived</span></td>
                     <td>12-01-2025</td>
                     <td>
-                          <a routerLink="/documentPanel"><i class="fas fa-eye action-icon" title="View" ></i></a>
+                        <a routerLink="/dashboard/documentPanel"><i class="fas fa-eye action-icon" title="View"></i></a>
                         <!-- <i class="fas fa-edit action-icon" title="Edit"></i>
                             <i class="fa-solid fa-circle-info action-icon" title="Delete"></i> -->
                         <i class="fa-solid fa-share action-icon" title="send"></i>
@@ -108,13 +107,13 @@
                     <td><span class="status-badge status-active">Active</span></td>
                     <td>22-08-2025</td>
                     <td>
-                          <a routerLink="/documentPanel"><i class="fas fa-eye action-icon" title="View" ></i></a>
+                        <a routerLink="/dashboard/documentPanel"><i class="fas fa-eye action-icon" title="View"></i></a>
                         <!-- <i class="fas fa-edit action-icon" title="Edit"></i>
                             <i class="fa-solid fa-circle-info action-icon" title="Delete"></i> -->
                         <!-- <i class="fa-solid fa-share action-icon" title="send"></i> -->
                     </td>
                 </tr>
-                
+
             </tbody>
         </table>
     </div>
@@ -134,56 +133,5 @@
             </ul>
         </nav>
     </div>
-</div>
-<!-- add doc popup -->
- <div class="modal fade" id="addDocumentModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content shadow-lg">
-
-      <div class="modal-header">
-        <h5 class="modal-title">
-          <i class="fas fa-upload me-2"></i> Upload Document
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-
-      <div class="modal-body">
-        <form>
-
-          <!-- Container ID -->
-          <div class="mb-3">
-            <label class="form-label">Container ID</label>
-            <input type="text" class="form-control" placeholder="Enter container id">
-          </div>
-
-          <!-- Document Type -->
-          <div class="mb-3">
-            <label class="form-label">Document Type</label>
-            <select class="form-select">
-              <option selected disabled>Select type</option>
-              <option>BOL</option>
-              <option>Packing List</option>
-              <option>Invoice</option>
-              <option>Phytosanitary Certificate</option>
-            
-            </select>
-          </div>
-
-          <div class="mb-3">
-            <label class="form-label">Choose File</label>
-            <input type="file" class="form-control">
-          </div>
-
-        </form>
-      </div>
-
-      <div class="modal-footer">
-        <button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
-        <button class="btn btn-primary btn-sm">
-          <i class="fas fa-cloud-upload-alt me-1"></i> Upload Document
-        </button>
-      </div>
-
-    </div>
-  </div>
+ 
 </div>

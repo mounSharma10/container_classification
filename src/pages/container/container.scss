@@ -175,3 +175,19 @@ iframe {
   height: 60vh;
   border-radius: 10px;
 }
+
+        .select-btn {
+            background-color: #3498db;
+            color: white;
+             padding: 10px 25px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .select-btn:hover {
+            background-color: #2980b9;
+        }
+

@@ -7,17 +7,26 @@ import { Login } from '../auth/login/login';
 import { DocPanel } from '../pages/doc-panel/doc-panel';
 
 export const routes: Routes = [
-    { path: 'login', component: Login },
-    { path: '', redirectTo: 'login', pathMatch: 'full' },
-    {
-    path: '',
+  { path: 'login', component: Login },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {
+    path: 'upload',
     component: Layout,
     children: [
-      { path: 'dashboard', component: Dashboard },
-      { path: 'upload', component: FileUpload },
+      // { path: '', redirectTo: '', pathMatch: 'full' },
+      { path: '', component: FileUpload },
       { path: 'containers', component: Container },
-      { path: 'documentPanel', component: DocPanel },
-      { path: '', redirectTo: 'upload', pathMatch: 'full' }
+
     ]
   },
+  {
+    path: 'dashboard',
+    component: Layout,
+    children: [
+      // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: '', component: Dashboard },
+      { path: 'documentPanel', component: DocPanel },
+
+    ]
+  }
 ];
