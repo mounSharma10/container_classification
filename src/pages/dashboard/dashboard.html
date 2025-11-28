@@ -1,137 +1,91 @@
 <div class="document-container">
 
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <div>
-            <h2 class="h4 mb-1">Dashboard</h2>
-            <!-- <p class="text-muted small mb-0">Manage your documents and files</p> -->
-        </div>
-        <div class="d-flex gap-2">
-            <!-- <button class="btn btn-outline-primary btn-sm">
-                    <i class="fas fa-download me-1"></i> filter
-                </button> -->
-            <div class="dropdown position-relative" [class.show]="showFilter">
-
-                <button class="btn btn-outline-primary btn-sm dropdown-toggle px-3 py-2" type="button"
-                    (click)="toggleFilter()">
-                    <i class="fas fa-filter me-1"></i> Filter
-                </button>
-                <div class="dropdown-menu p-3 filter-dropdown" [class.show]="showFilter">
-                    <div class="mb-2">
-                        <label class="form-label">Container ID</label>
-                        <input type="text" class="form-control form-control-sm" [(ngModel)]="filters.name"
-                            placeholder="Enter container ID ">
-                    </div>
-                    <!-- 
-                    <div class="mb-2">
-                        <label class="form-label">Document Type</label>
-                        <select class="form-select form-select-sm" [(ngModel)]="filters.type">
-                            <option value="">All Types</option>
-                            <option>PDF</option>
-                            <option>Word</option>
-                            <option>Excel</option>
-                        </select>
-                    </div> -->
-
-                    <button class="btn btn-primary btn-sm w-100" (click)="applyFilter()">
-                        Apply Filter
-                    </button>
-                </div>
-            </div>
-        
-
-        </div>
-    </div>
-    <div class="table-responsive">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Container ID</th>
-                    <th>Document Count</th>
-                    <th>Status</th>
-                    <th>Last Modified</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>CON126677551</td>
-                    <td>4</td>
-                    <td><span class="status-badge status-active">Active</span></td>
-                    <td>12-01-2025</td>
-                    <td>
-                        <a routerLink="/dashboard/documentPanel"><i class="fas fa-eye action-icon" title="View"></i></a>
-                        <!-- <i class="fas fa-edit action-icon" title="Edit"></i>
-                            <i class="fa-solid fa-circle-info action-icon" title="Delete"></i> -->
-                        <!-- <i class="fa-solid fa-share action-icon" title="send"></i> -->
-                    </td>
-                </tr>
-                <tr>
-                    <td>CON126677556</td>
-                    <td>2</td>
-                    <td><span class="status-badge status-pending">Pending</span></td>
-                    <td>12-01-2025</td>
-                    <td>
-                        <a routerLink="/dashboard/documentPanel"><i class="fas fa-eye action-icon" title="View"></i></a>
-                        <!-- <i class="fas fa-edit action-icon" title="Edit"></i>
-                            <i class="fa-solid fa-circle-info action-icon" title="Delete"></i> -->
-                        <i class="fa-solid fa-share action-icon" title="send"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>CON126677555</td>
-                    <td>3</td>
-                    <td><span class="status-badge status-active">Active</span></td>
-                    <td>12-01-2025</td>
-                    <td>
-                        <a routerLink="/dashboard/documentPanel"><i class="fas fa-eye action-icon" title="View"></i></a>
-                        <!-- <i class="fas fa-edit action-icon" title="Edit"></i>
-                            <i class="fa-solid fa-circle-info action-icon" title="Delete"></i> -->
-                        <i class="fa-solid fa-share action-icon" title="send"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>CON126676657</td>
-                    <td>1</td>
-                    <td><span class="status-badge status-archived">Archived</span></td>
-                    <td>12-01-2025</td>
-                    <td>
-                        <a routerLink="/dashboard/documentPanel"><i class="fas fa-eye action-icon" title="View"></i></a>
-                        <!-- <i class="fas fa-edit action-icon" title="Edit"></i>
-                            <i class="fa-solid fa-circle-info action-icon" title="Delete"></i> -->
-                        <i class="fa-solid fa-share action-icon" title="send"></i>
-                    </td>
-                </tr>
-                <tr>
-                    <td>CON126677555</td>
-                    <td>4</td>
-                    <td><span class="status-badge status-active">Active</span></td>
-                    <td>22-08-2025</td>
-                    <td>
-                        <a routerLink="/dashboard/documentPanel"><i class="fas fa-eye action-icon" title="View"></i></a>
-                        <!-- <i class="fas fa-edit action-icon" title="Edit"></i>
-                            <i class="fa-solid fa-circle-info action-icon" title="Delete"></i> -->
-                        <!-- <i class="fa-solid fa-share action-icon" title="send"></i> -->
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
+  <!-- HEADER -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2 class="h4 mb-1">Dashboard</h2>
     </div>
 
-    <div class="d-flex justify-content-end mt-4">
-        <nav>
-            <ul class="pagination pagination-custom mb-0">
-                <li class="page-item">
-                    <a class="page-link" href="#"><i class="fas fa-chevron-left"></i></a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                </li>
-            </ul>
-        </nav>
+    <div class="d-flex align-items-center search-wrapper">
+      <div class="input-group search-group">
+        <input type="text"
+               class="form-control search-input"
+               placeholder="Search Container ID...">
+        <button class="btn btn-primary search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
     </div>
- 
+  </div>
+
+
+  <!-- TABLE -->
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Container ID</th>
+          <th>Document Count</th>
+          <th>Status</th>
+          <th>Last Modified</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let container of containers">
+          <td>{{ container.id }}</td>
+          <td>{{ container.count }}</td>
+
+          <!-- ✅ COMPLETE / INCOMPLETE STATUS -->
+          <td>
+            <span class="status-badge"
+                  [ngClass]="{
+                    'status-complete': container.count === 4,
+                    'status-incomplete': container.count < 4
+                  }">
+              {{ container.count === 4 ? 'Complete' : 'Incomplete' }}
+            </span>
+          </td>
+
+          <td>{{ container.date }}</td>
+
+          <td class="d-flex align-items-center gap-2">
+
+            <!-- View -->
+            <a [routerLink]="['/dashboard/documentPanel', container.count]">
+              <i class="fas fa-eye action-icon" title="View"></i>
+            </a>
+
+            <!-- ✅ Share only if incomplete -->
+            <i class="fa-solid fa-share action-icon"
+               title="Send"
+               *ngIf="container.count < 4">
+            </i>
+
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+
+  <!-- PAGINATION -->
+  <div class="d-flex justify-content-end mt-4">
+    <nav>
+      <ul class="pagination pagination-custom mb-0">
+        <li class="page-item">
+          <a class="page-link"><i class="fas fa-chevron-left"></i></a>
+        </li>
+        <li class="page-item active"><a class="page-link">1</a></li>
+        <li class="page-item"><a class="page-link">2</a></li>
+        <li class="page-item"><a class="page-link">3</a></li>
+        <li class="page-item">
+          <a class="page-link"><i class="fas fa-chevron-right"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
 </div>

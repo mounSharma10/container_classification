@@ -115,12 +115,12 @@ border: 2px solid #d32f2f;
 }
 
 .icon-btn.delete {
-  background: #ffebc5;
-  color: orange;
+  background: #ffcdc4;
+  color: #ce6136;
 }
 
 .icon-btn.delete:hover {
-  background: orange;
+  background: #ce6136;
   color: #fff;
 }
 
@@ -190,4 +190,64 @@ iframe {
         .select-btn:hover {
             background-color: #2980b9;
         }
+
+.mapping-panel {
+  background: #f8fafc;
+  border: 1px dashed #dbe2ea;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.mapping-title {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #1e293b;
+}
+
+.mapping-input {
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 10px 12px;
+}
+
+.mapping-btn {
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  background-color: #3498db;
+  color: white;
+}
+
+.mapping-row .mapping-box {
+  height: 90px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5ecf3;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.file-box {
+  display: flex !important;
+  align-items: center;
+}
+
+.file-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.mapping-input {
+  border-radius: 12px;
+  height: 45px;
+}
+
+/* Make select vertically centered */
+.mapping-box select {
+  margin-top: 6px;
+}
 

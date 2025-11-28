@@ -4,6 +4,7 @@ import { RouterLink, RouterModule } from "@angular/router";
 
 @Component({
   selector: 'app-file-upload',
+  standalone: true, 
   imports: [CommonModule, RouterLink, RouterModule],
   templateUrl: './file-upload.html',
   styleUrl: './file-upload.scss',

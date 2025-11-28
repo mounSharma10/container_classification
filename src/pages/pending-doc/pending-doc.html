@@ -1,0 +1,102 @@
+<div class="document-container">
+
+  <!-- Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2 class="h4 mb-1">Pending Documents</h2>
+      <small class="text-muted">Documents currently under review</small>
+    </div>
+
+    <!-- <div class="d-flex align-items-center search-wrapper">
+      <div class="input-group search-group">
+        <input type="text"
+               class="form-control search-input"
+               placeholder="Search Document / Container...">
+        <button class="btn btn-primary search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div> -->
+  </div>
+
+  <!-- Table -->
+  <div class="table-responsive">
+    <table class="table table-hover align-middle">
+      <thead>
+        <tr>
+          <!-- <th>Container ID</th> -->
+          <th>Document Name</th>
+          <!-- <th>File Type</th> -->
+          <th>Status</th>
+          <th>Uploaded Via</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <!-- <td>CON126677556</td> -->
+          <td>NLDIndia.pdf</td>
+          <!-- <td>Bill Of Lading</td> -->
+          <td>
+            <span class="status-badge status-pending">Review Pending</span>
+          </td>
+          <td>API</td>
+          <td>
+            <button class="btn btn-outline-primary btn-sm">
+ Review
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <!-- <td>CON126677555</td> -->
+          <td>Dummy_Document.pdf</td>
+          <!-- <td>Invoice</td> -->
+          <td>
+            <span class="status-badge status-pending">Review Pending</span>
+          </td>
+          <td>Email</td>
+          <td>
+            <button class="btn btn-outline-primary btn-sm">
+Review
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <!-- <td>CON126676657</td> -->
+          <td>testdocument.pdf</td>
+          <!-- <td>Packing List</td> -->
+          <td>
+            <span class="status-badge status-pending"> Review Pending</span>
+          </td>
+          <td>Email</td>
+          <td>
+            <button class="btn btn-outline-primary btn-sm">
+ Review
+            </button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  <div class="d-flex justify-content-end ">
+    <nav>
+      <ul class="pagination pagination-custom mb-0">
+        <li class="page-item">
+          <a class="page-link" href="#"><i class="fas fa-chevron-left"></i></a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+</div>

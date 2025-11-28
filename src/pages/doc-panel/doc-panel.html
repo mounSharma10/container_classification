@@ -1,13 +1,17 @@
 <div class="container py-4">
   <div class="d-flex justify-content-between mb-3">
-      <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
-        data-bs-target="#addDocumentModal">
-        <i class="fas fa-plus me-1"></i> Add Document
-      </button>
+
     <button routerLink="/dashboard" class="btn btn-outline-primary btn-sm px-3 py-2">
       <i class="fa-solid fa-chevron-left me-1"></i> Back
     </button>
 
+    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addDocumentModal"
+      *ngIf="documentCount < 4">
+      <i class="fas fa-plus me-1"></i> Add Document
+    </button>
+    <!-- <span *ngIf="documentCount >= 4" class="text-danger fw-semibold">
+      Maximum 4 documents allowed
+    </span> -->
   </div>
   <div class="card-clean">
     <h2 class="section-title">Container Details</h2>
@@ -19,7 +23,8 @@
         </div>
         <div class="info-row">
           <div class="info-label">Document Count:</div>
-          <div class="info-value">4</div>
+          <div class="info-value">{{ documentCount }}</div>
+
         </div>
       </div>
       <div class="col-md-6">
@@ -41,7 +46,7 @@
 
   <div class="card-clean">
     <div class="d-flex justify-content-end">
-    
+
     </div>
 
     <div class="card-clean">
