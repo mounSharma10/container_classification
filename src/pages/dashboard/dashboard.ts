@@ -18,13 +18,55 @@ export class Dashboard {
     type: ''
   };
 
-  containers = [
-    { id: 'CON126677551', count: 4, status: 'Active', date: '12-01-2025' },
-    { id: 'CON126677556', count: 2, status: 'Pending', date: '12-01-2025' },
-    { id: 'CON126677555', count: 3, status: 'Active', date: '12-01-2025' },
-    { id: 'CON126676657', count: 1, status: 'Archived', date: '12-01-2025' },
-    { id: 'CON126677999', count: 4, status: 'Active', date: '22-08-2025' }
-  ];
+ containers = [
+  {
+    id: 'CON982345671',
+    count: 4,
+    blNo: 'BL-IND-45890021',
+    origin: 'Nhava Sheva',
+    destination: 'Rotterdam',
+    vessel: 'Sea Dragon',
+    date: '05-02-2025'
+  },
+  {
+    id: 'CON774512990',
+    count: 1,
+    blNo: 'HAPAG-BL-998877',
+    origin: 'Kolkata',
+    destination: 'Hamburg',
+    vessel: 'Nordic Pearl',
+    date: '18-01-2025'
+  },
+  {
+    id: 'CON563214772',
+    count: 3,
+    blNo: 'MAERSK-BL-563214',
+    origin: 'Chennai',
+    destination: 'Jebel Ali',
+    vessel: 'Ocean Titan',
+    date: '22-02-2025'
+  },
+  {
+    id: 'CON334455889',
+    count: 2,
+    blNo: 'COSCO-BL-334455',
+    origin: 'Mumbai',
+    destination: 'Bangkok',
+    vessel: 'Pacific Storm',
+    date: '10-03-2025'
+  },
+  {
+    id: 'CON998877665',
+    count: 4,
+    blNo: 'MSC-BL-66554433',
+    origin: 'Visakhapatnam',
+    destination: 'London',
+    vessel: 'Royal Navigator',
+    date: '28-02-2025'
+  }
+];
+
+
 
   toggleFilter() {
     this.showFilter = !this.showFilter;
@@ -34,4 +76,5 @@ export class Dashboard {
     console.log(this.filters);
     this.showFilter = false;
   }
+  
 }

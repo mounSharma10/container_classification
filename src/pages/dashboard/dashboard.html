@@ -20,55 +20,52 @@
 
 
   <!-- TABLE -->
-  <div class="table-responsive">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Container ID</th>
-          <th>Document Count</th>
-          <th>Status</th>
-          <th>Last Modified</th>
-          <th>Action</th>
-        </tr>
-      </thead>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Container ID</th>
+        <th>Document Count</th>
+        <th>BL No</th>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Vessel Name</th>
+        <th>Last Modified</th>
+        <th>Action</th>
+      </tr>
+    </thead>
 
-      <tbody>
-        <tr *ngFor="let container of containers">
-          <td>{{ container.id }}</td>
-          <td>{{ container.count }}</td>
+    <tbody>
+      <tr *ngFor="let container of containers">
+        <td>{{ container.id }}</td>
+        <td>{{ container.count }}</td>
 
-          <!-- ✅ COMPLETE / INCOMPLETE STATUS -->
-          <td>
-            <span class="status-badge"
-                  [ngClass]="{
-                    'status-complete': container.count === 4,
-                    'status-incomplete': container.count < 4
-                  }">
-              {{ container.count === 4 ? 'Complete' : 'Incomplete' }}
-            </span>
-          </td>
+        <!-- NEW FIELDS -->
+        <td>{{ container.blNo }}</td>
+        <td>{{ container.origin }}</td>
+        <td>{{ container.destination }}</td>
+        <td>{{ container.vessel }}</td>
 
-          <td>{{ container.date }}</td>
+        <td>{{ container.date }}</td>
 
-          <td class="d-flex align-items-center gap-2">
+        <td class="d-flex align-items-center gap-2">
+          <!-- View -->
+          <a [routerLink]="['/dashboard/documentPanel', container.count]">
+            <i class="fas fa-eye action-icon" title="View"></i>
+          </a>
 
-            <!-- View -->
-            <a [routerLink]="['/dashboard/documentPanel', container.count]">
-              <i class="fas fa-eye action-icon" title="View"></i>
-            </a>
+          <!-- Share only if incomplete -->
+          <i class="fa-solid fa-share action-icon"
+             title="Send"
+             *ngIf="container.count < 4">
+          </i>
+        </td>
+      </tr>
+    </tbody>
 
-            <!-- ✅ Share only if incomplete -->
-            <i class="fa-solid fa-share action-icon"
-               title="Send"
-               *ngIf="container.count < 4">
-            </i>
+  </table>
+</div>
 
-          </td>
-        </tr>
-      </tbody>
-
-    </table>
-  </div>
 
 
   <!-- PAGINATION -->
