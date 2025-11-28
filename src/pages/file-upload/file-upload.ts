@@ -34,7 +34,6 @@ export class FileUpload {
   }
 
   onFileChange(event: any) {
-    debugger
     this.handleFiles(event.target.files);
   }
 

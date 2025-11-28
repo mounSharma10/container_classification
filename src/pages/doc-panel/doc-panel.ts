@@ -8,5 +8,10 @@ import { RouterModule } from '@angular/router';
   styleUrl: './doc-panel.scss',
 })
 export class DocPanel {
-
+openFileModal() {
+  const modal = new (window as any).bootstrap.Modal(
+    document.getElementById('filePreviewModal')
+  );
+  modal.show();
+}
 }

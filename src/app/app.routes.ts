@@ -8,6 +8,7 @@ import { DocPanel } from '../pages/doc-panel/doc-panel';
 
 export const routes: Routes = [
     { path: 'login', component: Login },
+    { path: '', redirectTo: 'login', pathMatch: 'full' },
     {
     path: '',
     component: Layout,
