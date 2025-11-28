@@ -1,0 +1,35 @@
+<div class="main-content">
+    <div class="content-area">
+        <div class="upload-section">
+            <h2>Upload your file</h2>
+
+            <div class="upload-area" id="uploadArea">
+                <p>Upload document here</p>
+                <button class="select-files-btn" onclick="document.getElementById('fileInput').click()">
+                    Select files
+                </button>
+                <input type="file" id="fileInput" class="file-input" multiple (change)="onFileChange($event)">
+            </div>
+
+            <div class="file-list" id="fileList" *ngIf="selectedFiles.length>0">
+                @for (item of selectedFiles; track $index) {
+                <div class="file-item">
+                    <span><i class="fas fa-file"></i> {{item.name}}</span>
+                    <div (click)="removeFile($index)"><i class="fas fa-times"></i></div>
+                </div>
+                }
+
+            </div>
+
+            <div class="action-buttons">
+                <button class="clear-btn" id="clearBtn" (click)="clearFiles()">Clear</button>
+                <div class="right-buttons">
+                    <!-- <button class="save-btn">Save</button> -->
+                    <button class="select-btn ">Save & Review</button>
+                    <!-- <button class="save-btn">Review</button> -->
+                    <button class="select-btn">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

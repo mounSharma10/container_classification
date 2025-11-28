@@ -1,0 +1,149 @@
+
+       
+
+        .content-area {
+            padding: 20px;
+            height: calc(100vh - 70px);
+            overflow-y: auto;
+        }
+
+        .upload-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .upload-section h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        .upload-area {
+            border: 2px dashed #bdc3c7;
+            border-radius: 8px;
+            padding: 82px 40px;
+            text-align: center;
+            background-color: #fafafa;
+            transition: all 0.3s;
+            cursor: pointer;
+            height: 50vh;
+                display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+        }
+
+        .upload-area:hover {
+            border-color: #3498db;
+            background-color: #f0f8ff;
+        }
+
+        .upload-area.dragover {
+            border-color: #3498db;
+            background-color: #e8f4f8;
+        }
+
+        .upload-area p {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .select-files-btn {
+            background-color: #95a5a6;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .select-files-btn:hover {
+            background-color: #7f8c8d;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .clear-btn {
+            color: #e74c3c;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .clear-btn:hover {
+            color: #c0392b;
+        }
+
+        .right-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .save-btn, .select-btn {
+            padding: 10px 25px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .save-btn {
+            background-color: transparent;
+            color: #7f8c8d;
+        }
+
+        .save-btn:hover {
+            color: #2c3e50;
+        }
+
+        .select-btn {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .select-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-list {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            // display: none;
+        }
+
+        .file-list.show {
+            display: block;
+        }
+
+        .file-item {
+            padding: 10px;
+            background-color: white;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .file-item i {
+            color: #e74c3c;
+            cursor: pointer;
+        }
