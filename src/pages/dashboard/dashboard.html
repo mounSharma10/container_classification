@@ -21,46 +21,46 @@
 
   <!-- TABLE -->
 <div class="table-responsive">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Container ID</th>
-        <th>BL No</th>
-        <th>Origin</th>
-        <th>Destination</th>
-        <th>Vessel Name</th>
-        <th>Last Modified</th>
-        <th>Document Count</th>  <!-- ✅ Now 2nd last -->
-        <th>Action</th>
-      </tr>
-    </thead>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Container ID</th>
+      <th>BL No</th>
+      <th>Vessel Name</th>
+      <th>Origin</th>
+      <th>Destination</th>
+      <th>Last Modified</th>
+      <th>Document Count</th>  
+      <th>Action</th>
+    </tr>
+  </thead>
 
-    <tbody>
-      <tr *ngFor="let container of containers">
-        <td>{{ container.id }}</td>
-        <td>{{ container.blNo }}</td>
-        <td>{{ container.origin }}</td>
-        <td>{{ container.destination }}</td>
-        <td>{{ container.vessel }}</td>
-        <td>{{ container.date }}</td>
+  <tbody>
+    <tr *ngFor="let container of containers">
+      <td>{{ container.id }}</td>
+      <td>{{ container.blNo }}</td>
+      <td>{{ container.vessel }}</td>
+      <td>{{ container.origin }}</td>
+      <td>{{ container.destination }}</td>
+      <td>{{ container.date }}</td>
+      <td>{{ container.count }}</td>
 
-        <td>{{ container.count }}</td> <!-- ✅ 2nd last -->
+      <td class="d-flex align-items-center gap-2">
+        <!-- View -->
+        <a [routerLink]="['/dashboard/documentPanel', container.count]">
+          <i class="fas fa-eye action-icon" title="View"></i>
+        </a>
 
-        <td class="d-flex align-items-center gap-2">
-          <!-- View -->
-          <a [routerLink]="['/dashboard/documentPanel', container.count]">
-            <i class="fas fa-eye action-icon" title="View"></i>
-          </a>
+        <!-- Share only if incomplete -->
+        <i class="fa-solid fa-share action-icon"
+           title="Send"
+           *ngIf="container.count < 4">
+        </i>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-          <!-- Share only if incomplete -->
-          <i class="fa-solid fa-share action-icon"
-             title="Send"
-             *ngIf="container.count < 4">
-          </i>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>
 
 
