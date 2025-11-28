@@ -4,6 +4,7 @@ import { Layout } from '../pages/layout/layout';
 import { FileUpload } from '../pages/file-upload/file-upload';
 import { Container } from '../pages/container/container';
 import { Login } from '../auth/login/login';
+import { DocPanel } from '../pages/doc-panel/doc-panel';
 
 export const routes: Routes = [
     { path: 'login', component: Login },
@@ -14,8 +15,8 @@ export const routes: Routes = [
       { path: 'dashboard', component: Dashboard },
       { path: 'upload', component: FileUpload },
       { path: 'containers', component: Container },
-    
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
+      { path: 'documentPanel', component: DocPanel },
+      { path: '', redirectTo: 'upload', pathMatch: 'full' }
     ]
   },
 ];

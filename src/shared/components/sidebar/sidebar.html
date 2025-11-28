@@ -1,11 +1,8 @@
-<div class="logo">Fluentia</div>
+<div class="logo">Berencourt</div>
 <!-- <img src="../../../assets/logo.svg" alt="Logo" class="logoize"> -->
 
 <ul class="sidebar-menu">
-     <li routerLink="dashboard" routerLinkActive="active">
-        <i class="fas fa-file-alt"></i>
-        <span>Dashboard</span>
-    </li>
+ 
     <!-- <li routerLink="containers" routerLinkActive="active">
         <i class="fas fa-chart-line"></i>Containers </li> -->
 
@@ -14,10 +11,15 @@
         <span>Upload file</span>
     </li>
 
+        <li routerLink="dashboard" routerLinkActive="active">
+        <i class="fas fa-file-alt"></i>
+        <span>Dashboard</span>
+    </li>
+
    
 </ul>
 
 <div class="logout">
     <i class="fas fa-sign-out-alt"></i>
-    <span>Logout</span>
+    <span routerLink="login">Logout</span>
 </div>
