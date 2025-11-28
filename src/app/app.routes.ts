@@ -5,28 +5,37 @@ import { FileUpload } from '../pages/file-upload/file-upload';
 import { Container } from '../pages/container/container';
 import { Login } from '../auth/login/login';
 import { DocPanel } from '../pages/doc-panel/doc-panel';
+import { PendingDoc } from '../pages/pending-doc/pending-doc';
 
 export const routes: Routes = [
   { path: 'login', component: Login },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
+
   {
     path: 'upload',
     component: Layout,
     children: [
-      // { path: '', redirectTo: '', pathMatch: 'full' },
       { path: '', component: FileUpload },
       { path: 'containers', component: Container },
-
     ]
   },
+
   {
     path: 'dashboard',
     component: Layout,
     children: [
-      // { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: '', component: Dashboard },
-      { path: 'documentPanel', component: DocPanel },
 
+      { path: 'documentPanel/:count', component: DocPanel },
+    ]
+  },
+
+  {
+    path: 'pending-doc',
+    component: Layout,
+    children: [
+      { path: '', component: PendingDoc },
+      // { path: '', component: PendingDoc },
     ]
   }
 ];
