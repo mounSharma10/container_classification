@@ -6,6 +6,7 @@ import { Container } from '../pages/container/container';
 import { Login } from '../auth/login/login';
 import { DocPanel } from '../pages/doc-panel/doc-panel';
 import { PendingDoc } from '../pages/pending-doc/pending-doc';
+import { ArchiveTab } from '../pages/archive-tab/archive-tab';
 
 export const routes: Routes = [
   { path: 'login', component: Login },
@@ -15,8 +16,8 @@ export const routes: Routes = [
     path: 'upload',
     component: Layout,
     children: [
-      { path: '', component: FileUpload },
-      { path: 'containers', component: Container },
+      { path: '', component: FileUpload , data: { name: 'File Upload' } },
+      { path: 'containers', component: Container , data: { name: 'Containers' } },
     ]
   },
 
@@ -24,9 +25,9 @@ export const routes: Routes = [
     path: 'dashboard',
     component: Layout,
     children: [
-      { path: '', component: Dashboard },
+      { path: '', component: Dashboard , data: { name: 'Dashboard' } },
 
-      { path: 'documentPanel/:count', component: DocPanel },
+      { path: 'documentPanel/:count', component: DocPanel, data: { name: 'Document Panel' }  },
     ]
   },
 
@@ -34,8 +35,16 @@ export const routes: Routes = [
     path: 'pending-doc',
     component: Layout,
     children: [
-      { path: '', component: PendingDoc },
+      { path: '', component: PendingDoc, data: { name: 'Pending Document' }  },
       // { path: '', component: PendingDoc },
+    ]
+  },
+  {
+    path: 'archive-tab',
+    component: Layout,
+    children: [
+      { path: '', component: ArchiveTab, data: { name: 'Archive Tab' }  },
+
     ]
   }
 ];

@@ -5,7 +5,7 @@
       <i class="fa-solid fa-chevron-left me-1"></i> Back
     </button>
 
-    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addDocumentModal"
+    <button class="btn select-btn  select-btn  btn-sm" data-bs-toggle="modal" data-bs-target="#addDocumentModal"
       *ngIf="documentCount < 4">
       <i class="fas fa-plus me-1"></i> Add Document
     </button>
@@ -15,209 +15,146 @@
   </div>
   <div class="card-clean">
     <h2 class="section-title">Container Details</h2>
-<div class="row">
+    <div class="row">
 
-  <!-- LEFT COLUMN -->
-  <div class="col-md-6">
-    <div class="info-row">
-      <div class="info-label">Container ID:</div>
-      <div class="info-value">1254gdx554</div>
-    </div>
-    <div class="info-row">
-      <div class="info-label">Vessel Name:</div>
-      <div class="info-value">Ocean Queen</div>
-    </div>       
-     <div class="info-row">
-      <div class="info-label">Destination:</div>
-      <div class="info-value">Netheland</div>
-    </div>
-
-
-
-  </div>
+      <!-- LEFT COLUMN -->
+      <div class="col-md-6">
+        <div class="info-row">
+          <div class="info-label">Container ID:</div>
+          <div class="info-value">1254gdx554</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Vessel Name:</div>
+          <div class="info-value">Ocean Queen</div>
+        </div>
+        <div class="info-row">
+          <div class="info-label">Destination:</div>
+          <div class="info-value">Netheland</div>
+        </div>
 
 
-  <!-- RIGHT COLUMN -->
-  <div class="col-md-6">
-    <!-- <div class="info-row">
+
+      </div>
+
+
+      <!-- RIGHT COLUMN -->
+      <div class="col-md-6">
+        <!-- <div class="info-row">
       <div class="info-label">Uploaded by:</div>
       <div class="info-value">E-Mail</div>
     </div> -->
 
 
         <div class="info-row">
-      <div class="info-label">BL:</div>
-      <div class="info-value">BL-987654321</div>
-    </div>
+          <div class="info-label">BL:</div>
+          <div class="info-value">BL-987654321</div>
+        </div>
         <div class="info-row">
-      <div class="info-label">Origin:</div>
-      <div class="info-value">INDIA</div>
-    </div>
+          <div class="info-label">Origin:</div>
+          <div class="info-value">INDIA</div>
+        </div>
 
 
 
-  </div>
-
-</div>
-
-
-  <div class="card-clean">
-    <div class="d-flex justify-content-end">
+      </div>
 
     </div>
+
 
     <div class="card-clean">
-
-      <div class="row g-4">
-
-        <!-- BOL -->
-        <div class="col-lg-6">
-          <div class="document-item">
-            <i class="fas fa-file-pdf doc-icon"></i>
-            <div class="doc-info">
-              <div class="doc-name">BOL.pdf</div>
-              <div class="doc-type">Bill Of Lading</div>
+      <div class="d-flex justify-content-end">
+      </div>
+        <div class="row g-4">
+          @for(doc of documents; track doc){
+          <div class="col-lg-6">
+            <div class="document-item gap-2">
+              <div class="file-icon pdf" [class]="doc.fileType">
+                    <i class="fa-solid fa-file-pdf"></i>
+                  </div>
+              <div class="doc-info">
+                <div class="doc-name">{{ doc.fileName }}</div>
+                <div class="doc-type">{{ doc.documentType }}</div>
+              </div>
+              <div class="doc-actions">
+               <button class="icon-btn view" (click)="openFileModal()">
+                    <i class="fas fa-eye"></i>
+                  </button>
+              </div>
             </div>
-            <div class="doc-actions">
-              <button class="btn btn-outline-primary btn-sm" (click)="openFileModal()">
-                <i class="fas fa-eye me-1"></i> View
-              </button>
+          </div>
+          }
+        </div>
+    </div>
+
+    <!-- pdf -->
+    <div class="modal fade" id="filePreviewModal" tabindex="-1" aria-labelledby="filePreviewLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered model-width">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="filePreviewLabel">
+              <i class="fas fa-file-alt me-2"></i> File Preview
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="file-preview-area">
+              <p class="m-0 p-0"><strong>File Name:</strong> BOL.pdf</p>
+              <p class="m-0 p-0"><strong>Size:</strong> 2.3 MB</p>
+
+              <hr>
+              <div class="preview-box preview-pdf">
+                <iframe src="../../assets/dummy-pdf_2.pdf" title="PDF Preview" frameborder="0">
+                </iframe>
+              </div>
             </div>
           </div>
         </div>
-
-        <!-- Invoice -->
-        <div class="col-lg-6">
-          <div class="document-item">
-            <i class="fas fa-file-pdf doc-icon"></i>
-            <div class="doc-info">
-              <div class="doc-name">Invoice.pdf</div>
-              <div class="doc-type">Invoice</div>
-            </div>
-            <div class="doc-actions">
-              <button class="btn btn-outline-primary btn-sm" (click)="openFileModal()">
-                <i class="fas fa-eye me-1"></i> View
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Packing List -->
-        <div class="col-lg-6">
-          <div class="document-item">
-            <i class="fas fa-file-pdf doc-icon"></i>
-            <div class="doc-info">
-              <div class="doc-name">Packing_List.pdf</div>
-              <div class="doc-type">Packing List</div>
-            </div>
-            <div class="doc-actions">
-              <button class="btn btn-outline-primary btn-sm" (click)="openFileModal()">
-                <i class="fas fa-eye me-1"></i> View
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="document-item">
-            <i class="fas fa-file-pdf doc-icon"></i>
-            <div class="doc-info">
-              <div class="doc-name">Phytosanitary Certificate.pdf</div>
-              <div class="doc-type">Certificate</div>
-            </div>
-            <div class="doc-actions">
-              <button class="btn btn-outline-primary btn-sm" (click)="openFileModal()">
-                <i class="fas fa-eye me-1"></i> View
-              </button>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
 
-  </div>
+    <!-- add doc popup -->
+    <div class="modal fade" id="addDocumentModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content shadow-lg">
 
-  <!-- pdf -->
-  <div class="modal fade" id="filePreviewModal" tabindex="-1" aria-labelledby="filePreviewLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered model-width">
-      <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              <i class="fas fa-upload me-2"></i> Upload Document
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
 
-        <div class="modal-header">
-          <h5 class="modal-title" id="filePreviewLabel">
-            <i class="fas fa-file-alt me-2"></i> File Preview
-          </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
+          <div class="modal-body">
+            <form>
+              <!-- Document Type -->
+              <div class="mb-3">
+                <label class="form-label">Document Type</label>
+                <select class="form-select">
+                  <option selected disabled>Select type</option>
+                  <option>BOL</option>
+                  <option>Packing List</option>
+                  <option>Invoice</option>
+                  <option>Phytosanitary Certificate</option>
 
-        <div class="modal-body">
-          <div class="file-preview-area">
-            <p class="m-0 p-0"><strong>File Name:</strong> BOL.pdf</p>
-            <p class="m-0 p-0"><strong>Size:</strong> 2.3 MB</p>
+                </select>
+              </div>
 
-            <hr>
+              <div class="mb-3">
+                <label class="form-label">Choose File</label>
+                <input type="file" class="form-control">
+              </div>
 
-            <div class="preview-box preview-pdf">
-              <iframe src="../../assets/dummy-pdf_2.pdf" title="PDF Preview" frameborder="0">
-              </iframe>
-            </div>
+            </form>
+          </div>
+
+          <div class="modal-footer">
+            <button class="select-btn cencel" data-bs-dismiss="modal">Cancel</button>
+            <button class="select-btn ">
+              <i class="fas fa-cloud-upload-alt me-1"></i> Upload Document
+            </button>
           </div>
         </div>
-
       </div>
     </div>
-  </div>
-
-
-
-  <!-- add doc popup -->
-  <div class="modal fade" id="addDocumentModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content shadow-lg">
-
-        <div class="modal-header">
-          <h5 class="modal-title">
-            <i class="fas fa-upload me-2"></i> Upload Document
-          </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-
-        <div class="modal-body">
-          <form>
-
-            <!-- Container ID -->
-            <!-- <div class="mb-3">
-              <label class="form-label">Container ID</label>
-              <input type="text" class="form-control" placeholder="Enter container id">
-            </div> -->
-
-            <!-- Document Type -->
-            <div class="mb-3">
-              <label class="form-label">Document Type</label>
-              <select class="form-select">
-                <option selected disabled>Select type</option>
-                <option>BOL</option>
-                <option>Packing List</option>
-                <option>Invoice</option>
-                <option>Phytosanitary Certificate</option>
-
-              </select>
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label">Choose File</label>
-              <input type="file" class="form-control">
-            </div>
-
-          </form>
-        </div>
-
-        <div class="modal-footer">
-          <button class="select-btn cencel" data-bs-dismiss="modal">Cancel</button>
-          <button class="select-btn ">
-            <i class="fas fa-cloud-upload-alt me-1"></i> Upload Document
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>

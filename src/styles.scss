@@ -1,0 +1,123 @@
+     .select-btn {
+         background-color: #3498db;
+         color: white;
+         padding: 10px 25px;
+         border-radius: 4px;
+         border: none;
+         cursor: pointer;
+         font-size: 14px;
+         transition: all 0.3s;
+     }
+
+     .items-color {
+         color: #3498db;
+     }
+     .select-btn:hover {
+         background-color: #2980b9;
+         color: white;
+     }
+     //  table
+     .document-container {
+         background-color: white;
+         border-radius: 8px;
+         padding: 16px;
+         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+         height: 89vh;
+         overflow: hidden;
+     }
+
+     .table-responsive::-webkit-scrollbar {
+         height: 5px;
+         width: 5px;
+     }
+
+     .table {
+         border-collapse: collapse;
+         width: 100%;
+     }
+
+     .table td,
+     .table th {
+         white-space: nowrap;
+     }
+     .table thead th {
+         position: sticky;
+         top: 0;
+         background: #f4f6f9;
+         z-index: 10;
+         padding: 14px 12px;
+         font-weight: 600;
+         border-bottom: 1px solid #e0e6ed;
+     }
+
+     .table tbody tr {
+         transition: background 0.25s ease;
+     }
+
+     .table tbody tr:hover {
+         background: #f0f6ff;
+     }
+     .table td {
+         padding: 14px 12px;
+         border-bottom: 1px solid #edf2f7;
+         color: #34495e;
+     }
+     .action-icon {
+         font-size: 15px;
+         margin-right: 8px;
+         transition: transform 0.2s ease, color 0.2s ease;
+     }
+
+     .action-icon:hover {
+         transform: scale(1.15);
+     }
+
+     .table-responsive::-webkit-scrollbar {
+         width: 8px;
+     }
+
+     .table-responsive::-webkit-scrollbar-thumb {
+         background: #cfd9e6;
+         border-radius: 10px;
+     }
+
+     // pagination
+
+     .pagination-custom .page-link {
+         border: none;
+         color: #7f8c8d;
+         margin: 0 2px;
+     }
+
+     .pagination-custom .page-item.active .page-link {
+         background-color: #3498db;
+         color: white;
+     }
+
+     .file-icon {
+         width: 46px;
+         height: 46px;
+         border-radius: 12px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         //   font-size: 22px;
+         color: white;
+         // border: 2px solid #d32f2f;
+     }
+
+     .bol {
+         background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+     }
+
+     .invoice {
+         background: linear-gradient(135deg, #4D96FF, #6FA8FF);
+     }
+
+     .packing {
+         background: linear-gradient(135deg, #FFB84C, #FFD27F);
+     }
+
+     .phytosanitary {
+         background: linear-gradient(135deg, #9B59B6, #BE7ED9);
+     }

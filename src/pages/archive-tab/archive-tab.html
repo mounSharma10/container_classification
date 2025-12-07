@@ -1,0 +1,75 @@
+ <div class="document-container bg-white">
+
+
+  <div class="table-responsive ">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Container ID</th>
+          <th>BL No</th>
+          <th>Berencourt Ref</th>
+          <th>Vessel Name</th>
+          <th>Origin</th>
+          <th>Destination</th>
+          <th>Last Modified</th>
+          <th>Status</th> 
+          <th>Document Count</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let container of containers">
+          <td>{{ container.id }}</td>
+          <td>{{ container.blNo }}</td>
+
+          <td>
+            <span *ngIf="container.berencourtRef; else noRef">
+              {{ container.berencourtRef }}
+            </span>
+
+            <ng-template #noRef>
+              <span class="text-muted">Pending</span>
+            </ng-template>
+          </td>
+
+          <td>{{ container.vessel }}</td>
+          <td>{{ container.origin }}</td>
+          <td>{{ container.destination }}</td>
+          <td>{{ container.date }}</td>
+                <td>
+          <span class="status-success">Success</span>
+        </td>
+          <td>{{ container.count }}</td>
+
+          <td class="d-flex align-items-center gap-2">
+            <a [routerLink]="['/dashboard/documentPanel', container.count]">
+              <i class="fas fa-eye  action-icon items-color " title="View"></i>
+            </a>
+
+            <i class="fa-solid fa-share-nodes action-icon items-color " title="Send" *ngIf="container.count < 4">
+            </i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- pagination -->
+     <div class="d-flex justify-content-end mt-4">
+    <nav>
+      <ul class="pagination pagination-custom mb-0">
+        <li class="page-item">
+          <a class="page-link"><i class="fas fa-chevron-left"></i></a>
+        </li>
+        <li class="page-item active"><a class="page-link">1</a></li>
+        <li class="page-item"><a class="page-link">2</a></li>
+        <li class="page-item"><a class="page-link">3</a></li>
+        <li class="page-item">
+          <a class="page-link"><i class="fas fa-chevron-right"></i></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  </div>

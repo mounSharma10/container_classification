@@ -1,0 +1,120 @@
+{
+  "containers": [
+    {
+      "id": "CON126677551",
+      "files": [
+        {
+          "name": "BOL.PDF",
+          "size": "2.3 MB",
+          "type": "pdf",
+          "fileType": "bol"
+        },
+        {
+          "name": "INVOICE.PDF",
+          "size": "1.1 MB",
+          "type": "pdf",
+          "fileType": "invoice"
+        },
+        {
+          "name": "PACKING LIST.PDF",
+          "size": "800 KB",
+          "type": "pdf",
+          "fileType": "packing"
+        },
+        {
+          "name": "Phytosanitary Certificate",
+          "size": "5.2 MB",
+          "type": "pdf",
+          "fileType": "phytosanitary"
+        }
+      ]
+    },
+    {
+      "id": "CON445566882",
+      "files": [
+        {
+          "name": "BOL.PDF",
+          "size": "2.3 MB",
+          "type": "pdf",
+          "fileType": "bol"
+        },
+        {
+          "name": "INVOICE.PDF",
+          "size": "1.1 MB",
+          "type": "pdf",
+          "fileType": "invoice"
+        },
+        {
+          "name": "PACKING LIST.PDF",
+          "size": "800 KB",
+          "type": "pdf",
+          "fileType": "packing"
+        },
+        {
+          "name": "Phytosanitary Certificate",
+          "size": "5.2 MB",
+          "type": "pdf",
+          "fileType": "phytosanitary"
+        }
+      ]
+    },
+    {
+      "id": "CON126677883",
+      "files": [
+        {
+          "name": "BOL.PDF",
+          "size": "2.3 MB",
+          "type": "pdf",
+          "fileType": "bol"
+        },
+        {
+          "name": "INVOICE.PDF",
+          "size": "1.1 MB",
+          "type": "pdf",
+          "fileType": "invoice"
+        },
+        {
+          "name": "PACKING LIST.PDF",
+          "size": "800 KB",
+          "type": "pdf",
+          "fileType": "packing"
+        },
+        {
+          "name": "Phytosanitary Certificate",
+          "size": "5.2 MB",
+          "type": "pdf",
+          "fileType": "phytosanitary"
+        }
+      ]
+    },
+    {
+      "id": "CON445566884",
+      "files": [
+        {
+          "name": "BOL.PDF",
+          "size": "2.3 MB",
+          "type": "pdf",
+          "fileType": "bol"
+        },
+        {
+          "name": "INVOICE.PDF",
+          "size": "1.1 MB",
+          "type": "pdf",
+          "fileType": "invoice"
+        },
+        {
+          "name": "PACKING LIST.PDF",
+          "size": "800 KB",
+          "type": "pdf",
+          "fileType": "packing"
+        },
+        {
+          "name": "Phytosanitary Certificate",
+          "size": "5.2 MB",
+          "type": "pdf",
+          "fileType": "phytosanitary"
+        }
+      ]
+    }
+  ]
+}
