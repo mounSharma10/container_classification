@@ -13,13 +13,6 @@ import { HttpClientModule } from '@angular/common/http';
 export class Container {
   openContainerIndex: any = 'all';
   containersList: any = [];
- fileColors = [
-  'linear-gradient(135deg, #FF6B6B, #FF8E53)',  // red
-  'linear-gradient(135deg, #4D96FF, #6FA8FF)',  // blue
-  'linear-gradient(135deg, #FFB84C, #FFD27F)',  // orange
-  'linear-gradient(135deg, #9B59B6, #BE7ED9)',  // purple
-  'linear-gradient(135deg, #2ECC71, #6CE39E)'   // green
-];
   documents = [
     { type: 'PDF', iconClass: 'icon-pdf', previewIcon: 'far fa-file-pdf' },
     { type: 'DOC', iconClass: 'icon-doc', previewIcon: 'far fa-file-word' },

@@ -14,50 +14,22 @@
       </thead>
 
       <tbody>
-        <tr>
+        @for(doc of pandingDocs;  track $index) {
+           <tr>
           <!-- <td>CON126677556</td> -->
-          <td>NLDIndia.pdf</td>
+          <td>{{ doc.fileName }}</td>
           <!-- <td>Bill Of Lading</td> -->
           <td>
-            <span class="status-badge status-pending">Review Pending</span>
+            <span class="status-badge status-pending">{{ doc.status }}</span>
           </td>
-          <td>API</td>
+          <td>{{ doc.source }}</td>
           <td>
             <button class="btn unselect-btn btn-sm" routerLink="/dashboard">
-              Review
+            {{ doc.action }}
             </button>
           </td>
         </tr>
-
-        <tr>
-          <!-- <td>CON126677555</td> -->
-          <td>Dummy_Document.pdf</td>
-          <!-- <td>Invoice</td> -->
-          <td>
-            <span class="status-badge status-pending">Review Pending</span>
-          </td>
-          <td>Email</td>
-          <td>
-            <button class="btn unselect-btn " routerLink="/dashboard">
-              Review
-            </button>
-          </td>
-        </tr>
-
-        <tr>
-          <!-- <td>CON126676657</td> -->
-          <td>testdocument.pdf</td>
-          <!-- <td>Packing List</td> -->
-          <td>
-            <span class="status-badge status-pending"> Review Pending</span>
-          </td>
-          <td>Email</td>
-          <td>
-            <button class="btn unselect-btn" routerLink="/dashboard">
-              Review
-            </button>
-          </td>
-        </tr>
+        }
 
       </tbody>
     </table>

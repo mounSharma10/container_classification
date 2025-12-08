@@ -8,5 +8,40 @@ import { RouterModule } from '@angular/router';
   styleUrl: './pending-doc.scss',
 })
 export class PendingDoc {
+pandingDocs = 
+[
+  {
+    "fileName": "NLDIndia.pdf",
+    "status": "Review Pending",
+    "source": "API",
+    "action": "Review",
+
+  },
+  {
+    "fileName": "Dummy_Document.pdf",
+    "status": "Review Pending",
+    "source": "Email",
+    "action": "Review",
+
+  },
+  {
+    "fileName": "testdocument.pdf",
+    "status": "Review Pending",
+    "source": "Email",
+    "action": "Review",
+  },
+  {
+    "fileName": "document.pdf",
+    "status": "Review Pending",
+    "source": "API",
+    "action": "Review",
+  },
+  {
+    "fileName": "test.pdf",
+    "status": "Review Pending",
+    "source": "Email",
+    "action": "Review",
+  }
+]
 
 }

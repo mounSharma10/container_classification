@@ -39,7 +39,7 @@ export class ArchiveTab {
     destination: 'Jebel Ali',
     vessel: 'Ocean Titan',
     date: '22-02-2025',
-    berencourtRef: null           // Pending
+    berencourtRef: null         
   },
   {
     id: 'CON334455889',
