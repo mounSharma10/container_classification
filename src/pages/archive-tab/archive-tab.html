@@ -1,6 +1,44 @@
+
  <div class="document-container bg-white">
+     <div class="row mb-4 d-flex justify-content-between align-items-center">
+    <div class="col-md-8 d-flex gap-2">
+      <div class="input-group ">
+        <input type="text" class="form-control" placeholder="Container ID...">
+        <!-- <button class="btn select-btn">
+          Search
+        </button> -->
+      </div>
+      <div class="input-group ">
+        <input type="text" class="form-control" placeholder="BL No...">
+      </div>
 
+      <button class="btn select-btn " type="button">
+        Search
+      </button>
+      <button class="btn unselect-btn Reset px-3" type="button">
+        Reset
+      </button>
+      <button class="btn select-btn col-md-3" data-bs-toggle="modal" data-bs-target="#columnModal">
+        Fields Configrauration
+      </button>
+    </div>
+    <div class="col-md-2">
+      <div class="position-relative w-100">
+        <button class="btn select-btn dropdown-toggle" (click)="toggleDropdown()" type="button">Client:
+          {{ selectedItem || 'Select Client' }}
+        </button>
+        <ul class="dropdown-menu show w-100" *ngIf="isDropdownOpen"
+          style="display:block; position:absolute; top:100%; left:0;">
+          <li *ngFor="let item of items">
+            <button class="dropdown-item" (click)="selectItem(item)">
+              {{ item }}
+            </button>
+          </li>
+        </ul>
 
+      </div>
+    </div>
+  </div>
   <div class="table-responsive ">
     <table class="table table-hover">
       <thead>
@@ -32,7 +70,6 @@
               <span class="text-muted">Pending</span>
             </ng-template>
           </td>
-
           <td>{{ container.vessel }}</td>
           <td>{{ container.origin }}</td>
           <td>{{ container.destination }}</td>
@@ -73,3 +110,60 @@
   </div>
 
   </div>
+
+<div class="modal fade" id="columnModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Select Columns to Display</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="column-grid">
+
+          <label class="checkbox-item">
+            <input type="checkbox" checked> Container ID
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" checked> BL No
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" checked> Berencourt Ref
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" checked> Vessel Name
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" checked> Origin
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" checked> Destination
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" checked> Last Modified
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" checked> Document Count
+          </label>
+
+          <label class="checkbox-item">
+            <input type="checkbox" checked> Action
+          </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn select-btn">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>

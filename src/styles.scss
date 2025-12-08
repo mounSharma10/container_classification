@@ -1,9 +1,18 @@
      .select-btn {
          background-color: #3498db;
          color: white;
-         padding: 10px 25px;
+         padding: 8px 20px;
          border-radius: 4px;
          border: none;
+         cursor: pointer;
+         font-size: 14px;
+         transition: all 0.3s;
+     }
+     .unselect-btn {
+         border: 2px solid #3498db;
+           color: #3498db;
+         padding: 4px 9px;
+         border-radius: 4px;
          cursor: pointer;
          font-size: 14px;
          transition: all 0.3s;
@@ -13,6 +22,10 @@
          color: #3498db;
      }
      .select-btn:hover {
+         background-color: #2980b9;
+         color: white;
+     }
+     .unselect-btn:hover {
          background-color: #2980b9;
          color: white;
      }
@@ -106,11 +119,11 @@
          // border: 2px solid #d32f2f;
      }
 
-     .bol {
+     .invoice  {
          background: linear-gradient(135deg, #FF6B6B, #FF8E53);
      }
 
-     .invoice {
+     .bol  {
          background: linear-gradient(135deg, #4D96FF, #6FA8FF);
      }
 
@@ -121,3 +134,4 @@
      .phytosanitary {
          background: linear-gradient(135deg, #9B59B6, #BE7ED9);
      }
+

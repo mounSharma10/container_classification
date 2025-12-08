@@ -14,14 +14,14 @@
       <div class="input-group ">
         <input type="text" class="form-control" placeholder="BL No...">
       </div>
-     
+
       <button class="btn select-btn " type="button">
         Search
       </button>
-      <button class="btn select-btn Reset" type="button">
+      <button class="btn unselect-btn px-3" type="button">
         Reset
       </button>
- <button class="btn select-btn col-md-3" data-bs-toggle="modal" data-bs-target="#columnModal">
+      <button class="btn select-btn col-md-3" data-bs-toggle="modal" data-bs-target="#columnModal">
         Fields Configrauration
       </button>
     </div>
@@ -86,13 +86,12 @@
               <i class="fas fa-eye action-icon" title="View"></i>
             </a>
 
-            <i class="fa-solid fa-share action-icon" title="Send" *ngIf="container.count < 4">
+            <i class="fa-solid fa-share-nodes action-icon" title="Send" *ngIf="container.count < 4">
             </i>
           </td>
         </tr>
       </tbody>
     </table>
-
   </div>
 
   <!-- PAGINATION -->

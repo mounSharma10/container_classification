@@ -1,7 +1,7 @@
 <div class="container-fluid p-4">
   <div class="d-flex justify-content-between align-items-center mb-2">
     <!-- <h1 class="dashboard-title">Review Container</h1> -->
-    <button routerLink="/upload" class="btn btn-outline-primary btn-sm px-3 py-2 "><i
+    <button routerLink="/upload" class="btn unselect-btn px-3 py-2 "><i
         class="fa-solid fa-chevron-left"></i>Back</button>
   </div>
   <div class="accordion" id="containerAccordion">
@@ -61,18 +61,18 @@
     <!-- <h6 class="mapping-title">Map File Between Containers</h6> -->
 
     <div class="row g-3 align-items-end">
-
-
       <div class="col-md-4">
         <!-- <label for="Document">Document</label> -->
         <div class="mapping-box file-box">
-          <div class="file-left">
-            <div class="file-icon pdf">
-              <i class="fa-solid fa-file-pdf"></i>
+         
+          <div class="file-left d-flex justify-content-between align-items-center w-100">
+             <div class=" d-flex align-items-center gap-3">
+            <div class="file-icon pdf bol" >
+                 <i class="fa-solid fa-file-pdf"></i>
             </div>
             <div class="file-info">
               <h6 class="file-name">test_document.PDF</h6>
-
+            </div>
             </div>
             <div class="file-actions">
               <button class="icon-btn view" (click)="openFileModal()">
@@ -125,7 +125,6 @@
 <div class="modal fade" id="filePreviewModal" tabindex="-1" aria-labelledby="filePreviewLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered model-width">
     <div class="modal-content">
-
       <div class="modal-header">
         <h5 class="modal-title" id="filePreviewLabel">
           <i class="fas fa-file-alt me-2"></i> File Preview

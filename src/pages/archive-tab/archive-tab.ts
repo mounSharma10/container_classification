@@ -62,5 +62,18 @@ export class ArchiveTab {
     berencourtRef: 'BCW-998877'   
   }
 ];
+  //
+  isDropdownOpen = false;
 
+  items = ["Client 1", "Client 2", "Client 3", "Client 4", "Client 5"];
+  selectedItem: string = "";
+
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  selectItem(item: string) {
+    this.selectedItem = item;
+    this.isDropdownOpen = false;
+  }
 }
