@@ -1,15 +1,9 @@
 <div class="document-container">
-  <!-- 
-  <div>
-    <h2 class="h4 mb-1">Dashboard</h2>
-  </div> -->
-  <div class="row mb-4 d-flex justify-content-between align-items-center">
+  <!-- <div class="row mb-4 d-flex justify-content-between align-items-center">
     <div class="col-md-8 d-flex gap-2">
       <div class="input-group ">
         <input type="text" class="form-control" placeholder="Container ID...">
-        <!-- <button class="btn select-btn">
-          Search
-        </button> -->
+
       </div>
       <div class="input-group ">
         <input type="text" class="form-control" placeholder="BL No...">
@@ -22,7 +16,7 @@
         Reset
       </button>
       <button class="btn select-btn col-md-3 px-3" data-bs-toggle="modal" data-bs-target="#columnModal">
-        Fields Configrauration
+        Fields Configuration
       </button>
     </div>
     <div class="col-md-2">
@@ -41,6 +35,38 @@
 
       </div>
     </div>
+  </div> -->
+
+  <div class="mb-3">
+    <div class="card filter-card shadow-sm">
+      <div class="card-body">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center">
+          <h6 class="fw-bold mb-0 items-color">Filters</h6>
+          <button class="btn items-color" data-bs-toggle="modal" (click)="showFilterModal = true">
+            <i class="fa-solid fa-sliders"></i> Fields Configuration
+          </button>
+        </div>
+
+        <!-- Filters Row -->
+        <div class="row g-3 align-items-end">
+          <div class="col-md-3">
+            <label class="form-label small">Container ID</label>
+            <input type="text" class="form-control" placeholder="Enter Container ID" />
+          </div>
+
+          <div class="col-md-3">
+            <label class="form-label small">BL No</label>
+            <input type="text" class="form-control" placeholder="Enter BL No." />
+          </div>
+
+          <div class="col-md-3 d-flex gap-2">
+            <button class="btn select-btn px-4">Search</button>
+            <button class="btn unselect-btn px-4">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- table -->
@@ -48,125 +74,81 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Container ID</th>
-          <th>BL No</th>
-          <th>Berencourt Ref</th>
-          <th>Vessel Name</th>
-          <th>Origin</th>
-          <th>Destination</th>
-          <th>Last Modified</th>
-          <th>Document Count</th>
-          <th>Action</th>
+          @for (col of visibleHeaders(); track col.dbColumnName) {
+          <th>{{ col.columnName }}</th>
+          }
+          <th>ACTION</th>
         </tr>
       </thead>
-
       <tbody>
-        <tr *ngFor="let container of containers">
-          <td>{{ container.id }}</td>
-          <td>{{ container.blNo }}</td>
-
+        @for (row of rows; track row.FILE) {
+        <tr>
+          @for (col of visibleCols; track col.dbColumnName) { @if(col.dbColumnName==='DOC_TYPE'){
           <td>
-            <span *ngIf="container.berencourtRef; else noRef">
-              {{ container.berencourtRef }}
-            </span>
-
-            <ng-template #noRef>
-              <span class="text-muted">Pending</span>
-            </ng-template>
+            @for (doc of docTypes; track $index) {
+            <span [ngClass]="getDocClass(row.DOC_TYPE, doc)">{{doc}}</span>
+            }
           </td>
-
-          <td>{{ container.vessel }}</td>
-          <td>{{ container.origin }}</td>
-          <td>{{ container.destination }}</td>
-          <td>{{ container.date }}</td>
-          <td>{{ container.count }}</td>
-
+          } @else {
+          <td>
+            {{ getCellValue(row, col.dbColumnName) }}
+          </td>
+          } }
           <td class="d-flex align-items-center gap-2">
-            <a [routerLink]="['/dashboard/documentPanel', container.count]">
-              <i class="fas fa-eye action-icon" title="View"></i>
+            <a [routerLink]="['/dashboard/documentPanel', row.COUNT]">
+              <i
+                class="fas fa-eye action-icon"
+                title="View"
+              ></i>
             </a>
-
-            <i class="fa-solid fa-share-nodes action-icon" title="Send" *ngIf="container.count < 4">
-            </i>
+            @if(row.COUNT< 4){
+            <i class="fa-solid fa-share-nodes action-icon" title="Send"> </i>
+            }
           </td>
         </tr>
+        }
       </tbody>
     </table>
   </div>
 
   <!-- PAGINATION -->
-  <div class="d-flex justify-content-end mt-4">
-    <nav>
-      <ul class="pagination pagination-custom mb-0">
-        <li class="page-item">
-          <a class="page-link"><i class="fas fa-chevron-left"></i></a>
-        </li>
-        <li class="page-item active"><a class="page-link">1</a></li>
-        <li class="page-item"><a class="page-link">2</a></li>
-        <li class="page-item"><a class="page-link">3</a></li>
-        <li class="page-item">
-          <a class="page-link"><i class="fas fa-chevron-right"></i></a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-
+  <div class="d-flex justify-content-end mt-4"><app-pagination></app-pagination></div>
 </div>
 
 <!-- pop up for select fields-->
-<div class="modal fade" id="columnModal" tabindex="-1">
+@if(showFilterModal){
+<div class="modal" [ngClass]="{ show: showFilterModal }" id="columnModal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
-
       <div class="modal-header">
         <h5 class="modal-title">Select Columns to Display</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <button
+          type="button"
+          class="btn-close"
+          (click)="showFilterModal = false"
+        ></button>
       </div>
 
       <div class="modal-body">
-
         <div class="column-grid">
-
+          @for (item of headers(); track $index) {
           <label class="checkbox-item">
-            <input type="checkbox" checked> Container ID
+            <input type="checkbox" [(ngModel)]="item.isVisible" />
+            {{ item.columnName }}
           </label>
-
-          <label class="checkbox-item">
-            <input type="checkbox" checked> BL No
-          </label>
-
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Berencourt Ref
-          </label>
-
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Vessel Name
-          </label>
-
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Origin
-          </label>
-
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Destination
-          </label>
-
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Last Modified
-          </label>
-
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Document Count
-          </label>
-
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Action
-          </label>
+          }
         </div>
       </div>
       <div class="modal-footer">
-        <button class="btn select-btn">Apply</button>
+        <button
+          [disabled]="visibleCount() >= 10"
+          class="btn select-btn"
+          (click)="toggleVisibility()"
+        >
+          Apply
+        </button>
       </div>
     </div>
   </div>
 </div>
+}

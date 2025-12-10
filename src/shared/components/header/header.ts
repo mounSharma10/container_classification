@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
@@ -14,22 +15,33 @@ export class Header {
   activeTab: 'profile' | 'archive' = 'profile';
   router = inject(Router);
   route = inject(ActivatedRoute);
+  items = ["Client 1", "Client 2", "Client 3", "Client 4", "Client 5"];
+  selectedItem: string = "";
+  isDropdownOpen = false;
+
   constructor() {
-    // Listen for route change
+
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
         this.routeName = this.getRouteName(this.route);
       });
   }
-  // Get the last child route data.name
+
   getRouteName(route: ActivatedRoute): string {
     while (route.firstChild) {
       route = route.firstChild;
     }
     return route.snapshot.data['name'] || '';
   }
-  toggleDropdown() {
-    this.isOpen = !this.isOpen;
-  }
+
+toggleDropdown() {
+  this.isDropdownOpen = !this.isDropdownOpen;
+}
+
+selectItem(item: string) {
+  this.selectedItem = item;
+  this.isDropdownOpen = false;
+}
+
 }

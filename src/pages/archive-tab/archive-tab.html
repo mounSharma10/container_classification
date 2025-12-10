@@ -1,11 +1,9 @@
 <div class="document-container bg-white">
-  <div class="row mb-4 d-flex justify-content-between align-items-center">
+  <!-- <div class="row mb-4 d-flex justify-content-between align-items-center">
     <div class="col-md-8 d-flex gap-2">
       <div class="input-group ">
         <input type="text" class="form-control" placeholder="Container ID...">
-        <!-- <button class="btn select-btn">
-          Search
-        </button> -->
+
       </div>
       <div class="input-group ">
         <input type="text" class="form-control" placeholder="BL No...">
@@ -18,7 +16,7 @@
         Reset
       </button>
       <button class="btn select-btn col-md-3" data-bs-toggle="modal" data-bs-target="#columnModal">
-        Fields Configrauration
+        Fields Configuration
       </button>
     </div>
     <div class="col-md-2">
@@ -37,127 +35,71 @@
 
       </div>
     </div>
-  </div>
-  <div class="table-responsive ">
+  </div> -->
+  <div class="table-responsive">
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Container ID</th>
-          <th>BL No</th>
-          <th>Berencourt Ref</th>
-          <th>Vessel Name</th>
-          <th>Origin</th>
-          <th>Destination</th>
-          <th>Last Modified</th>
-          <th>Status</th>
-          <th>Document Count</th>
-          <th>Action</th>
+          @for(head of visibleHeaders() ; track head.dbColumnName){
+          <th>{{ head.columnName }}</th>
+          }
+
+          <!-- <th>Document Count</th> -->
+          <th>STATUS</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr *ngFor="let container of containers">
-          <td>{{ container.id }}</td>
-          <td>{{ container.blNo }}</td>
-
+        @for (row of rows; track row.FILE) {
+        <tr>
+          @for (col of visibleCols; track col.dbColumnName) {
           <td>
-            <span *ngIf="container.berencourtRef; else noRef">
-              {{ container.berencourtRef }}
-            </span>
-
-            <ng-template #noRef>
-              <span class="text-muted">Pending</span>
-            </ng-template>
+            {{ getCellValue(row, col.dbColumnName) }}
           </td>
-          <td>{{ container.vessel }}</td>
-          <td>{{ container.origin }}</td>
-          <td>{{ container.destination }}</td>
-          <td>{{ container.date }}</td>
-          <td>
+          
+          }
+            <td>
             <span class="status-success">Success</span>
           </td>
-          <td>{{ container.count }}</td>
-
-          <td class="d-flex align-items-center gap-2">
-            <a [routerLink]="['/dashboard/documentPanel', container.count]">
-              <i class="fas fa-eye  action-icon items-color " title="View"></i>
-            </a>
-
-            <i class="fa-solid fa-share-nodes action-icon items-color " title="Send" *ngIf="container.count < 4">
-            </i>
-          </td>
         </tr>
+        }
+      
       </tbody>
     </table>
   </div>
 
   <!-- pagination -->
-  <div class="d-flex justify-content-end mt-4">
-    <nav>
-      <ul class="pagination pagination-custom mb-0">
-        <li class="page-item">
-          <a class="page-link"><i class="fas fa-chevron-left"></i></a>
-        </li>
-        <li class="page-item active"><a class="page-link">1</a></li>
-        <li class="page-item"><a class="page-link">2</a></li>
-        <li class="page-item"><a class="page-link">3</a></li>
-        <li class="page-item">
-          <a class="page-link"><i class="fas fa-chevron-right"></i></a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-
+  <div class="d-flex justify-content-end mt-4"><app-pagination></app-pagination></div>
+  4
 </div>
 
 <div class="modal fade" id="columnModal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
-
       <div class="modal-header">
         <h5 class="modal-title">Select Columns to Display</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
       <div class="modal-body">
-
         <div class="column-grid">
+          <label class="checkbox-item"> <input type="checkbox" checked /> Container ID </label>
 
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Container ID
-          </label>
+          <label class="checkbox-item"> <input type="checkbox" checked /> BL No </label>
 
-          <label class="checkbox-item">
-            <input type="checkbox" checked> BL No
-          </label>
+          <label class="checkbox-item"> <input type="checkbox" checked /> Berencourt Ref </label>
 
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Berencourt Ref
-          </label>
+          <label class="checkbox-item"> <input type="checkbox" checked /> Vessel Name </label>
 
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Vessel Name
-          </label>
+          <label class="checkbox-item"> <input type="checkbox" checked /> Origin </label>
 
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Origin
-          </label>
+          <label class="checkbox-item"> <input type="checkbox" checked /> Destination </label>
 
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Destination
-          </label>
+          <label class="checkbox-item"> <input type="checkbox" checked /> Last Modified </label>
 
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Last Modified
-          </label>
+          <label class="checkbox-item"> <input type="checkbox" checked /> Document Count </label>
 
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Document Count
-          </label>
-
-          <label class="checkbox-item">
-            <input type="checkbox" checked> Action
-          </label>
+          <label class="checkbox-item"> <input type="checkbox" checked /> Action </label>
         </div>
       </div>
       <div class="modal-footer">

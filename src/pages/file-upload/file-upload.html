@@ -1,35 +1,60 @@
 <div class="main-content">
-    <div class="content-area">
-        <div class="upload-section">
-           
+  <div class="content-area">
+    <div class="upload-section">
 
-            <div class="upload-area" id="uploadArea">
-                <p>Upload document here</p>
-                <button class="select-files-btn" onclick="document.getElementById('fileInput').click()">
-                    Select files
-                </button>
-                <input type="file" id="fileInput" class="file-input" multiple (change)="onFileChange($event)">
+      <h2 class="section-title">Upload Your Documents</h2>
+      <p class="section-subtitle">
+        Add shipping or container documents to review, verify, and upload securely.
+      </p>
+
+      <div class="upload-area" id="uploadArea">
+        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+        <h4>Drag & drop your files here</h4>
+        <p>
+          Supports PDF, DOC, XLS per file 
+        </p>
+
+        <button class="select-files-btn"
+          onclick="document.getElementById('fileInput').click()">
+          Browse Files
+        </button>
+
+        <input type="file"
+               id="fileInput"
+               class="file-input"
+               multiple
+               (change)="onFileChange($event)">
+      </div>
+
+      <div class="file-list" *ngIf="selectedFiles.length > 0">
+        <h5>Selected Files</h5>
+
+        @for (item of selectedFiles; track $index) {
+          <div class="file-item">
+            <span>
+              <i class="fas fa-file-alt"></i> {{ item.name }}
+            </span>
+            <div class="remove-file" (click)="removeFile($index)">
+              <i class="fas fa-times"></i>
             </div>
+          </div>
+        }
+      </div>
 
-            <div class="file-list" id="fileList" *ngIf="selectedFiles.length>0">
-                @for (item of selectedFiles; track $index) {
-                <div class="file-item">
-                    <span><i class="fas fa-file"></i> {{item.name}}</span>
-                    <div (click)="removeFile($index)"><i class="fas fa-times"></i></div>
-                </div>
-                }
+      <div class="action-buttons">
+        @if(selectedFiles.length > 0){
+        <button class="clear-btn" (click)="clearFiles()">Clear All</button>}
 
-            </div>
-
-            <div class="action-buttons">
-                <button class="clear-btn" id="clearBtn" (click)="clearFiles()">Clear</button>
-                <div class="right-buttons">
-                    <!-- <button class="save-btn">Save</button> -->
-                    <button class="select-btn" routerLink="/upload/containers">Save & Review</button>
-                    <!-- <button class="save-btn">Review</button> -->
-                    <button class="select-btn">Upload</button>
-                </div>
-            </div>
+        <div class="right-buttons">
+          <button class="outline-btn" routerLink="/upload/containers">
+            Save & Review
+          </button>
+          <button class="primary-btn">
+            Upload Files
+          </button>
         </div>
+      </div>
+
     </div>
+  </div>
 </div>

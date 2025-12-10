@@ -52,3 +52,54 @@
 .nav-tabs .nav-link {
   padding: 4px 10px;
 }
+
+.select-btn {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.top-bar {
+  height: 60px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.select-btn {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile-avatar {
+  width: 36px;
+  height: 36px;
+  background: #0d6efd;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  margin-top: 6px;
+}
+.position-relative {
+  position: relative !important;
+}
+
+.dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9999 !important;
+}
+
+.navbar,
+.navbar * {
+  overflow: visible !important;
+}
