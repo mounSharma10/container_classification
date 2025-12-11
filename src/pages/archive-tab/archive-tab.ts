@@ -43,60 +43,57 @@ export class ArchiveTab {
       complete: () => {},
     });
   }
-
+  header = [
+    { key: 'id', label: 'Container ID', isVisible: true },
+    { key: 'blNo', label: 'BOL', isVisible: true },
+    { key: 'vessel', label: 'Vessel Name', isVisible: true },
+    { key: 'origin', label: 'Origin', isVisible: true },
+    { key: 'destination', label: 'Destination', isVisible: true },
+    { key: 'reference', label: 'Reference', isVisible: true },
+  ];
   containers = [
     {
       id: 'CON982345671',
-      count: 4,
       blNo: 'BL-IND-45890021',
+      vessel: 'Sea Dragon',
       origin: 'Nhava Sheva',
       destination: 'Rotterdam',
-      vessel: 'Sea Dragon',
-      date: '05-02-2025',
-      berencourtRef: 'BCW-982345',
+      reference: 'BCW-982345',
     },
     {
       id: 'CON774512990',
-      count: 1,
       blNo: 'HAPAG-BL-998877',
+      vessel: 'Nordic Pearl',
       origin: 'Kolkata',
       destination: 'Hamburg',
-      vessel: 'Nordic Pearl',
-      date: '18-01-2025',
-      berencourtRef: null,
+      reference: 'BCW-9823456',
     },
     {
       id: 'CON563214772',
-      count: 3,
       blNo: 'MAERSK-BL-563214',
+      vessel: 'Ocean Titan',
       origin: 'Chennai',
       destination: 'Jebel Ali',
-      vessel: 'Ocean Titan',
-      date: '22-02-2025',
-      berencourtRef: null,
+      reference: 'BCW-563214',
     },
     {
       id: 'CON334455889',
-      count: 2,
       blNo: 'COSCO-BL-334455',
+      vessel: 'Pacific Storm',
       origin: 'Mumbai',
       destination: 'Bangkok',
-      vessel: 'Pacific Storm',
-      date: '10-03-2025',
-      berencourtRef: null,
+      reference: 'BCW-334455',
     },
     {
       id: 'CON998877665',
-      count: 4,
       blNo: 'MSC-BL-66554433',
+      vessel: 'Royal Navigator',
       origin: 'Visakhapatnam',
       destination: 'London',
-      vessel: 'Royal Navigator',
-      date: '28-02-2025',
-      berencourtRef: 'BCW-998877',
+      reference: 'BCW-998877',
     },
   ];
-  //
+
   isDropdownOpen = false;
 
   items = ['Client 1', 'Client 2', 'Client 3', 'Client 4', 'Client 5'];

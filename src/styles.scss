@@ -1,6 +1,5 @@
-
-*{
-font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+* {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
 }
 
 .select-btn {
@@ -38,6 +37,21 @@ font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
   color: white;
 }
 //  table
+.table-container {
+ background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.table-wrapper {
+  flex: 1;
+  overflow-y: auto;
+}
 .document-container {
   background-color: white;
   border-radius: 8px;
@@ -46,8 +60,6 @@ font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
   height: 91vh;
   overflow: hidden;
 }
-
-
 
 .table-responsive::-webkit-scrollbar {
   height: 5px;
@@ -58,6 +70,7 @@ font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
+  margin-bottom:0 ;
 }
 
 .table td,
@@ -109,7 +122,6 @@ font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
 }
 .table-responsive {
   max-height: 72vh;
-
 }
 
 .table-responsive::-webkit-scrollbar {
@@ -132,6 +144,14 @@ font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
   //   font-size: 22px;
   color: white;
   // border: 2px solid #d32f2f;
+}
+.pagination-container {
+  position: sticky;
+  bottom: 0;
+  background: #ffffff;
+  z-index: 10;
+  // padding: 16px;
+  // border-top: 1px solid #e2e8f0;
 }
 
 .invoice {

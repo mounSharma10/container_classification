@@ -36,24 +36,28 @@
       </div>
     </div>
   </div> -->
-  <div class="table-responsive">
+ 
+ <div class="table-container">
+ <div class="table-responsive">
     <table class="table table-hover">
       <thead>
-        <tr>
+        <!-- <tr>
           @for(head of visibleHeaders() ; track head.dbColumnName){ @if(head.dbColumnName !==
           'STATUS' && head.dbColumnName !== 'DOC_TYPE'){
           <th>{{ head.columnName }}</th>
           } @else if(head.dbColumnName === 'PAY' || head.dbColumnName === 'RMKS'){
           <td>{{  head.dbColumnName }}</td>
           } }
-
-          <!-- <th>Document Count</th> -->
-          <!-- <th>STATUS</th> -->
+        </tr> -->
+        @for(head of header; track head.key){
+          <th>{{ head.label }}</th>
+        }
+        <tr>
         </tr>
       </thead>
 
       <tbody>
-        @for (row of rows; track row.FILE) {
+        <!-- @for (row of rows; track row.FILE) {
         <tr>
           @for (col of visibleCols; track col.dbColumnName)  { 
             @if(col.dbColumnName !== 'STATUS' &&  col.dbColumnName !== 'DOC_TYPE'){
@@ -63,17 +67,28 @@
           } @else if(col.dbColumnName === 'PAY' || col.dbColumnName === 'RMKS'){
           <td>{{ getCellValue(row, col.dbColumnName) }}</td>
           } }
-          <!-- <td>
-            <span class="status-success">Success</span>
-          </td> -->
         </tr>
-        }
+        } -->
+@for(container of containers; track container.id) {
+        <tr>
+          <td>{{ container.id}}</td>
+          <td>{{ container.blNo}}</td>
+          <td>{{ container.vessel}}</td>
+          <td>{{ container.origin}}</td>
+          <td>{{ container.destination}}</td>
+          <td>{{ container.reference}}</td>
+        </tr>
+      }
       </tbody>
     </table>
+      <div class="pagination-container">
+    <app-pagination></app-pagination>
   </div>
+  </div>
+  </div> 
 
   <!-- pagination -->
-  <div class="pagination-container"><app-pagination></app-pagination></div>
+  <!-- <div class="pagination-container"><app-pagination></app-pagination></div> -->
 </div>
 
 <div class="modal fade" id="columnModal" tabindex="-1">
