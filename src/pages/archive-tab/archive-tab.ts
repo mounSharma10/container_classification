@@ -37,7 +37,6 @@ export class ArchiveTab {
   getTableData() {
     this.commonService.getTableData().subscribe({
       next: (data: any) => {
-        debugger;
         this.rows = data;
       },
       error: (error) => {},

@@ -86,8 +86,14 @@
           @for (col of visibleCols; track col.dbColumnName) { @if(col.dbColumnName==='DOC_TYPE'){
           <td>
             @for (doc of docTypes; track $index) {
-            <span [ngClass]="getDocClass(row.DOC_TYPE, doc)">{{doc}}</span>
+            <span [ngClass]="getDocClass(row.DOC_TYPE, doc)">{{ doc }}</span>
             }
+          </td>
+          } @else if (col.dbColumnName === 'STATUS'){
+          <td>
+            <span class="status-chip" [ngClass]="getStatusClass(row.STATUS)">
+              {{ row.STATUS }}
+            </span>
           </td>
           } @else {
           <td>
@@ -96,13 +102,10 @@
           } }
           <td class="d-flex align-items-center gap-2">
             <a [routerLink]="['/dashboard/documentPanel', row.COUNT]">
-              <i
-                class="fas fa-eye action-icon"
-                title="View"
-              ></i>
+              <i class="fas fa-eye action-icon" title="View"></i>
             </a>
-            @if(row.COUNT< 4){
-            <i class="fa-solid fa-share-nodes action-icon" title="Send"> </i>
+            @if(row.COUNT < 4){
+            <i class="fa-solid fa-share-nodes action-icon" title="Send"></i>
             }
           </td>
         </tr>
@@ -112,7 +115,7 @@
   </div>
 
   <!-- PAGINATION -->
-  <div class="d-flex justify-content-end mt-4"><app-pagination></app-pagination></div>
+  <div class="pagination-container"><app-pagination></app-pagination></div>
 </div>
 
 <!-- pop up for select fields-->
@@ -122,11 +125,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Select Columns to Display</h5>
-        <button
-          type="button"
-          class="btn-close"
-          (click)="showFilterModal = false"
-        ></button>
+        <button type="button" class="btn-close" (click)="showFilterModal = false"></button>
       </div>
 
       <div class="modal-body">

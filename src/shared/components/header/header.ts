@@ -18,6 +18,7 @@ export class Header {
   items = ["Client 1", "Client 2", "Client 3", "Client 4", "Client 5"];
   selectedItem: string = "";
   isDropdownOpen = false;
+  
 
   constructor() {
 
@@ -26,6 +27,12 @@ export class Header {
       .subscribe(() => {
         this.routeName = this.getRouteName(this.route);
       });
+  //   this.router.events
+  // .pipe(filter(event => event instanceof NavigationEnd))
+  // .subscribe(() => {
+  //   this.routeName = this.router.url.split('/').pop() || '';
+  // });
+
   }
 
   getRouteName(route: ActivatedRoute): string {

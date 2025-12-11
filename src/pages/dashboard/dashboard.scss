@@ -53,9 +53,8 @@
   font-size: 13px;
 }
 
-/* ============================= */
 /* TABLE */
-/* ============================= */
+
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -67,9 +66,7 @@
 }
 
 .table thead th {
-  position: sticky;
-  top: 0;
-  background: #f4f6f9;
+
   z-index: 10;
   padding: 14px 12px;
   font-weight: 600;
@@ -90,11 +87,9 @@
   background: #f0f6ff;
 }
 
-/* ============================= */
-/* TABLE SCROLL */
-/* ============================= */
+
 .table-responsive {
-  height: 54vh;
+  max-height: 50vh;
   overflow-y: auto;
 }
 
@@ -108,9 +103,6 @@
   border-radius: 10px;
 }
 
-/* ============================= */
-/* ACTION ICONS */
-/* ============================= */
 .action-icon {
   font-size: 16px;
   cursor: pointer;
@@ -249,4 +241,73 @@
 
 .modal {
   background-color: rgba(8, 8, 8, 0.5);
+}
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* SUCCESS */
+.status-success {
+  background: #e8fff3;
+  color: #0f9d58;
+}
+
+.status-success::before {
+
+  width: 6px;
+  height: 6px;
+  background: #0f9d58;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* PENDING */
+.status-pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.status-pending::before {
+  width: 6px;
+  height: 6px;
+  background: #fb923c;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* FAILED / ERROR */
+.status-failed {
+  background: #ffecec;
+  color: #dc2626;
+}
+
+.status-failed::before {
+
+  width: 6px;
+  height: 6px;
+  background: #dc2626;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* DEFAULT (if unknown) */
+.status-default {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.status-default::before {
+
+  width: 6px;
+  height: 6px;
+  background: #94a3b8;
+  border-radius: 50%;
+  margin-right: 8px;
 }

@@ -92,4 +92,20 @@ export class Dashboard {
 
     return docList.includes(doc) ? 'green' : 'red';
   }
+
+  getStatusClass(status: string): string {
+  if (!status) return '';
+
+  switch (status.toLowerCase()) {
+    case 'success':
+      return 'status-success';
+    case 'pending':
+      return 'status-pending';
+    case 'failed':
+    case 'error':
+      return 'status-failed';
+    default:
+      return 'status-default';
+  }
+}
 }

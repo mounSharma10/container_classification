@@ -5,12 +5,12 @@
     { "id": 3, "columnName": "CUST_REF", "dbColumnName": "CUST_REF", "isVisible": true },
     { "id": 4, "columnName": "CUST", "dbColumnName": "CUST", "isVisible": true },
     { "id": 5, "columnName": "PROD", "dbColumnName": "PROD", "isVisible": true },
-    { "id": 6, "columnName": "VSL", "dbColumnName": "VSL", "isVisible": true },
-    { "id": 7, "columnName": "TERM", "dbColumnName": "TERM", "isVisible": true },
+    { "id": 6, "columnName": "VSL", "dbColumnName": "VSL", "isVisible": false},
+    { "id": 7, "columnName": "TERM", "dbColumnName": "TERM", "isVisible": false },
     { "id": 8, "columnName": "CNTR", "dbColumnName": "CNTR", "isVisible": false },
     { "id": 9, "columnName": "BL_NO", "dbColumnName": "BL_NO", "isVisible": false },
     { "id": 10, "columnName": "ETA", "dbColumnName": "ETA", "isVisible": true },
-    { "id": 11, "columnName": "POD", "dbColumnName": "POD", "isVisible": true },
+    { "id": 11, "columnName": "POD", "dbColumnName": "POD", "isVisible": false },
     { "id": 12, "columnName": "POD_REF", "dbColumnName": "POD_REF", "isVisible": false },
     { "id": 13, "columnName": "IMA", "dbColumnName": "IMA", "isVisible": false },
     { "id": 14, "columnName": "T1", "dbColumnName": "T1", "isVisible": false },
@@ -20,7 +20,8 @@
     { "id": 18, "columnName": "TRANS", "dbColumnName": "TRANS", "isVisible": false },
     { "id": 19, "columnName": "RMKS", "dbColumnName": "RMKS", "isVisible": false },
     { "id": 20, "columnName": "COUNT", "dbColumnName": "COUNT", "isVisible": false },
-    { "id": 21, "columnName": "DOC_TYPE", "dbColumnName": "DOC_TYPE", "isVisible": false }
+    { "id": 21, "columnName": "DOC_TYPE", "dbColumnName": "DOC_TYPE", "isVisible": true },
+    { "id": 22, "columnName": "STATUS", "dbColumnName": "STATUS", "isVisible": true }
     ],
 
 
@@ -46,6 +47,7 @@
       "TRANS": "nvt",
       "RMKS": "AANGIFTE DMS KLAAR",
       "COUNT": 2,
+      "STATUS": "Pending",
       "DOC_TYPE": "BOL,Invoice"
     },
     {
@@ -69,6 +71,7 @@
       "TRANS": "04-12-2025 10:00",
       "RMKS": "IAV FACTUUR AAN FRESH DONK - 0709939090",
       "COUNT": 3,
+      "STATUS": "Pending",
       "DOC_TYPE": "Certificate"
     },
     {
@@ -92,6 +95,7 @@
       "TRANS": "3-12 z.s.m.",
       "RMKS": "OP T1 NAAR CZ",
       "COUNT": 2,
+      "STATUS": "Pending",
       "DOC_TYPE": "Invoice , Packing List"
     },
     {
@@ -115,6 +119,7 @@
       "TRANS": ["DE", "DE"],
       "RMKS": "AANGIFTE DMS KLAAR",
       "COUNT": 4,
+      "STATUS": "Pending",
       "DOC_TYPE": "Packing List"
     }
   ]

@@ -47,6 +47,8 @@ font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
   overflow: hidden;
 }
 
+
+
 .table-responsive::-webkit-scrollbar {
   height: 5px;
   width: 5px;
@@ -56,7 +58,6 @@ font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  
 }
 
 .table td,
@@ -65,10 +66,12 @@ font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
 }
 
 .table thead th {
-  background: #f8fafc;
+  position: sticky;
+  top: 0;
+  background: #3498db;
   font-size: 13px;
   font-weight: 600;
-  color: #475569;
+  color: #fff;
   padding: 16px;
   border-bottom: 1px solid #e2e8f0;
 }
@@ -105,8 +108,8 @@ font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
   border-radius: 10px;
 }
 .table-responsive {
-  height: 76vh;
-  overflow-y: auto;
+  max-height: 72vh;
+
 }
 
 .table-responsive::-webkit-scrollbar {
