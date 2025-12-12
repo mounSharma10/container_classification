@@ -1,15 +1,15 @@
 {
-  "headers" :[
-    { "id": 1, "columnName": "FILE", "dbColumnName": "FILE", "isVisible": true },
-    { "id": 2, "columnName": "BR", "dbColumnName": "BR", "isVisible": true },
-    { "id": 3, "columnName": "CUST_REF", "dbColumnName": "CUST_REF", "isVisible": true },
-    { "id": 4, "columnName": "CUST", "dbColumnName": "CUST", "isVisible": true },
-    { "id": 5, "columnName": "PROD", "dbColumnName": "PROD", "isVisible": true },
-    { "id": 6, "columnName": "VSL", "dbColumnName": "VSL", "isVisible": false},
+  "headers": [
+    { "id": 1, "columnName": "FILE", "dbColumnName": "FILE", "isVisible": false },
+    { "id": 2, "columnName": "BR", "dbColumnName": "BR", "isVisible": false },
+    { "id": 3, "columnName": "CUST_REF", "dbColumnName": "CUST_REF", "isVisible": false },
+    { "id": 4, "columnName": "CUST", "dbColumnName": "CUST", "isVisible": false },
+    { "id": 5, "columnName": "PROD", "dbColumnName": "PROD", "isVisible": false },
+    { "id": 6, "columnName": "VSL", "dbColumnName": "VSL", "isVisible": false },
     { "id": 7, "columnName": "TERM", "dbColumnName": "TERM", "isVisible": false },
     { "id": 8, "columnName": "CNTR", "dbColumnName": "CNTR", "isVisible": false },
     { "id": 9, "columnName": "BL_NO", "dbColumnName": "BL_NO", "isVisible": false },
-    { "id": 10, "columnName": "ETA", "dbColumnName": "ETA", "isVisible": true },
+    { "id": 10, "columnName": "ETA", "dbColumnName": "ETA", "isVisible": false },
     { "id": 11, "columnName": "POD", "dbColumnName": "POD", "isVisible": false },
     { "id": 12, "columnName": "POD_REF", "dbColumnName": "POD_REF", "isVisible": false },
     { "id": 13, "columnName": "IMA", "dbColumnName": "IMA", "isVisible": false },
@@ -19,14 +19,25 @@
     { "id": 17, "columnName": "PAY", "dbColumnName": "PAY", "isVisible": false },
     { "id": 18, "columnName": "TRANS", "dbColumnName": "TRANS", "isVisible": false },
     { "id": 19, "columnName": "RMKS", "dbColumnName": "RMKS", "isVisible": false },
+    { "id": 22, "columnName": "CONTAINER ID", "dbColumnName": "CONTAINER_ID", "isVisible": true },
+    { "id": 23, "columnName": "BL NO", "dbColumnName": "BL_NO", "isVisible": true },
+    { "id": 24, "columnName": "BERENCOURT REF", "dbColumnName": "BERENCOURT_REF", "isVisible": true },
+    { "id": 25, "columnName": "VESSEL NAME", "dbColumnName": "VESSEL_NAME", "isVisible": true },
+    { "id": 26, "columnName": "ORIGIN", "dbColumnName": "ORIGIN", "isVisible": true },
+    { "id": 27, "columnName": "DESTINATION", "dbColumnName": "DESTINATION", "isVisible": true },
     { "id": 20, "columnName": "COUNT", "dbColumnName": "COUNT", "isVisible": false },
-    { "id": 21, "columnName": "DOC_TYPE", "dbColumnName": "DOC_TYPE", "isVisible": true },
-    { "id": 22, "columnName": "STATUS", "dbColumnName": "STATUS", "isVisible": true }
-    ],
+    { "id": 21, "columnName": "DOC TYPE", "dbColumnName": "DOC_TYPE", "isVisible": true }
+  ],
 
-
-  "rows" : [
+  "rows": [
     {
+      "CONTAINER_ID": "CON982345671",
+      "BL_NO_FULL": "BL-IND-45890021",
+      "BERENCOURT_REF": "BCW-982345",
+      "VESSEL_NAME": "Sea Dragon",
+      "ORIGIN": "Nhava Sheva",
+      "DESTINATION": "Rotterdam",
+      "LAST_MODIFIED": "05-02-2025",
       "FILE": "S00039236",
       "BR": "ROT",
       "CUST_REF": "PO-25-078096",
@@ -37,20 +48,20 @@
       "CNTR": "HLBU9818728",
       "BL_NO": "HLCUME3251028955",
       "ETA": "26-Nov",
-      "POD": "Vastlegging",
-      "POD_REF": "NVT",
-      "IMA": null,
-      "T1": "EXTERN T1",
-      "AN": "Y",
-      "REL": "NVT",
-      "PAY": "nvt",
-      "TRANS": "nvt",
-      "RMKS": "AANGIFTE DMS KLAAR",
-      "COUNT": 2,
       "STATUS": "Pending",
-      "DOC_TYPE": "BOL,Invoice"
+      "DOC_TYPE": "BOL,Invoice",
+      "COUNT": "2"
     },
+
     {
+      "CONTAINER_ID": "CON774512990",
+      "BL_NO_FULL": "HAPAG-BL-998877",
+      "BERENCOURT_REF": "Pending",
+      "VESSEL_NAME": "Nordic Pearl",
+      "ORIGIN": "Kolkata",
+      "DESTINATION": "Hamburg",
+      "LAST_MODIFIED": "18-01-2025",
+
       "FILE": "S00038704",
       "BR": "ROT",
       "CUST_REF": "EMCU5480050",
@@ -61,44 +72,44 @@
       "CNTR": "EMCU5480050",
       "BL_NO": "EGLV149507640063",
       "ETA": "30-11 / 04:00",
-      "POD": "NVT",
-      "POD_REF": "NVT",
-      "IMA": null,
-      "T1": "Y",
-      "AN": "VB",
-      "REL": "Y - IN PB",
-      "PAY": "betaald 13-11",
-      "TRANS": "04-12-2025 10:00",
-      "RMKS": "IAV FACTUUR AAN FRESH DONK - 0709939090",
-      "COUNT": 3,
       "STATUS": "Pending",
-      "DOC_TYPE": "Certificate"
+      "DOC_TYPE": "Certificate",
+       "COUNT": "1"
     },
+
     {
+      "CONTAINER_ID": "CON563214772",
+      "BL_NO_FULL": "MAERSK-BL-563214",
+      "BERENCOURT_REF": "Pending",
+      "VESSEL_NAME": "Ocean Titan",
+      "ORIGIN": "Chennai",
+      "DESTINATION": "Jebel Ali",
+      "LAST_MODIFIED": "22-02-2025",
+
       "FILE": "S00039095",
       "BR": "ROT",
       "CUST_REF": "25XG968",
-      "CUST": "FRESH TRADE NATURE",   
+      "CUST": "FRESH TRADE NATURE",
       "PROD": "Knoflook",
       "VSL": "MSC SAN FRANCISCO",
       "TERM": "ECT",
       "CNTR": "OTPU6468746",
       "BL_NO": "YMJAN240297408",
       "ETA": "1-12 / 15:00",
-      "POD": "GI",
-      "POD_REF": "146840",
-      "IMA": null,
-      "T1": "Y - VB",
-      "AN": "VB",
-      "REL": "Y - IN PB",
-      "PAY": "bet. Lo",
-      "TRANS": "3-12 z.s.m.",
-      "RMKS": "OP T1 NAAR CZ",
-      "COUNT": 2,
       "STATUS": "Pending",
-      "DOC_TYPE": "Invoice , Packing List"
+      "DOC_TYPE": "Invoice , Packing List",
+       "COUNT": "2"
     },
+
     {
+      "CONTAINER_ID": "CON334455889",
+      "BL_NO_FULL": "COSCO-BL-334455",
+      "BERENCOURT_REF": "Pending",
+      "VESSEL_NAME": "Pacific Storm",
+      "ORIGIN": "Mumbai",
+      "DESTINATION": "Bangkok",
+      "LAST_MODIFIED": "10-03-2025",
+
       "FILE": "S00039499",
       "BR": "ROT",
       "CUST_REF": "CRTK-BIRB-25471",
@@ -109,18 +120,9 @@
       "CNTR": ["CGMU5421200", "FBIU5211998"],
       "BL_NO": ["1070611238", "CMDUCDM0179189"],
       "ETA": "2-12 / 02:20",
-      "POD": "NVT",
-      "POD_REF": "NVT",
-      "IMA": null,
-      "T1": "NVT",
-      "AN": "NVT",
-      "REL": "Y - IN PB",
-      "PAY": null,
-      "TRANS": ["DE", "DE"],
-      "RMKS": "AANGIFTE DMS KLAAR",
-      "COUNT": 4,
       "STATUS": "Pending",
-      "DOC_TYPE": "Packing List"
+      "DOC_TYPE": "Packing List",
+       "COUNT": 1
     }
   ]
 }

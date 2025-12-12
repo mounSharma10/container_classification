@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { TimeLine } from "../../shared/components/time-line/time-line";
 
 @Component({
   selector: 'app-doc-panel',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, TimeLine],
+  
   templateUrl: './doc-panel.html',
   styleUrl: './doc-panel.scss',
 })

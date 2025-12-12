@@ -1,0 +1,80 @@
+$green: #3498db;
+$gray: #D6D6D6;
+
+.transport-wrapper {
+//   padding: 30px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 600;
+//   margin-bottom: 20px;
+}
+
+.track {
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+/* Base Gray Line */
+.base-line {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: $gray;
+  border-radius: 4px;
+}
+
+/* Green Line that expands as the object moves */
+.progress-line {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  height: 6px;
+  background: $green;
+  border-radius: 4px;
+
+  width: 0%; /* Starts from 0 */
+  animation: lineGrow 6s linear forwards;
+}
+
+/* Object movement (ship/truck/etc.) */
+.moving-container {
+  position: absolute;
+  top: 10px;
+  left: 0%;
+  animation: moveObj 6s linear forwards;
+
+  i {
+    font-size: 34px;
+    color: $green;
+    animation: bounce 0.5s infinite alternate ease-in-out;
+  }
+}
+
+/* ## ANIMATIONS ## */
+
+/* Ship / object movement */
+@keyframes moveObj {
+  0% { left: 0%; }
+  100% { left: 95%; } 
+}
+
+/* Green progress line matches the object */
+@keyframes lineGrow {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* Cute bounce effect */
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-5px); }
+}
+
