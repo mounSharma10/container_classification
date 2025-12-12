@@ -75,7 +75,7 @@ export class Dashboard {
   }
 
   toggleVisibility() {
-    if (this.headers().filter((x: any) => x.isVisible).length > 10) {
+    if (this.headers().filter((x: any) => x.isVisible).length > 20) {
       return;
     }
     this.headers.update((cols: any) =>

@@ -47,7 +47,7 @@
   flex-direction: column;
 }
 
-.table-wrapper {
+.table-scroll {
   flex: 1;
   overflow-y: auto;
 }
@@ -111,20 +111,18 @@
   transform: scale(1.15);
 }
 
-.table-responsive::-webkit-scrollbar {
-  width: 8px;
+.table-scroll::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
 }
 
-.table-responsive::-webkit-scrollbar-thumb {
+.table-scroll::-webkit-scrollbar-thumb {
   background: #cfd9e6;
   border-radius: 10px;
 }
-.table-responsive {
-  max-height: 72vh;
-}
 
-.table-responsive::-webkit-scrollbar {
-  width: 8px;
+.table-scroll::-webkit-scrollbar {
+  width: 5px;
   height: 5px;
 }
 
