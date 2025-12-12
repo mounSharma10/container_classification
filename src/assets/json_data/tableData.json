@@ -1,11 +1,12 @@
 {
   "headers": [
     { "id": 22, "columnName": "CONTAINER ID", "dbColumnName": "CONTAINER_ID", "isVisible": true },
+    { "id": 28, "columnName": "CARGOWISE REF", "dbColumnName": "CARGOWISE_REF", "isVisible": true},
     { "id": 23, "columnName": "BL NO", "dbColumnName": "BL_NO", "isVisible": true },
-    { "id": 24, "columnName": "BERENCOURT REF", "dbColumnName": "BERENCOURT_REF", "isVisible": true },
+    { "id": 24, "columnName": "BERENCOURT REF", "dbColumnName": "BERENCOURT_REF", "isVisible": false},
     { "id": 25, "columnName": "VESSEL NAME", "dbColumnName": "VESSEL_NAME", "isVisible": true },
     { "id": 26, "columnName": "ORIGIN", "dbColumnName": "ORIGIN", "isVisible": true },
-    { "id": 27, "columnName": "DESTINATION", "dbColumnName": "DESTINATION", "isVisible": true },
+    { "id": 27, "columnName": "DESTINATION", "dbColumnName": "DESTINATION", "isVisible": false },
     { "id": 1, "columnName": "FILE", "dbColumnName": "FILE", "isVisible": false },
     { "id": 2, "columnName": "BR", "dbColumnName": "BR", "isVisible": false },
     { "id": 3, "columnName": "CUST REF", "dbColumnName": "CUST_REF", "isVisible": false },
@@ -50,7 +51,8 @@
       "ETA": "26-Nov",
       "STATUS": "Pending",
       "DOC_TYPE": "BOL,Invoice",
-      "COUNT": "2"
+      "COUNT": "2",
+      "CARGOWISE_REF": "CW-45890021"
     },
 
     {
@@ -74,7 +76,8 @@
       "ETA": "30-11 / 04:00",
       "STATUS": "Pending",
       "DOC_TYPE": "Certificate",
-       "COUNT": "1"
+      "COUNT": "1",
+       "CARGOWISE_REF": "CW-45890035"
     },
 
     {
@@ -98,7 +101,8 @@
       "ETA": "1-12 / 15:00",
       "STATUS": "Pending",
       "DOC_TYPE": "Invoice , Packing List",
-       "COUNT": "2"
+      "COUNT": "2",
+       "CARGOWISE_REF": "CW-45890034"
     },
 
     {
@@ -122,7 +126,8 @@
       "ETA": "2-12 / 02:20",
       "STATUS": "Pending",
       "DOC_TYPE": "Packing List",
-       "COUNT": 1
+      "COUNT": 1,
+       "CARGOWISE_REF": "CW-45890065"
     }
   ]
 }
